@@ -74,14 +74,14 @@
 							<div class="t_1200_1">
 								<div class="li_6">
 									<div class="l_41">
-										<a href="about.html" class="bg41_1"></a>
+										<a href="product.html" class="bg41_3"></a>
 									</div>
 									<div class="l_140">
 										<div class="t_140_1">
-											<a href="about.html">公司简介</a>
+											<a href="product.html" >产品规则</a>
 										</div>
 										<div class="t_140_2">
-											<a href="about.html">Talon tianhe</a>
+											<a href="product.html" >Product Rules</a>
 										</div>
 									</div>
 									<div class="l_17"></div>
@@ -106,7 +106,7 @@
 									</div>
 									<div class="l_140">
 										<div class="t_140_1">
-											<a href="javascript:" >源泰公告</a>
+											<a href="javascript:" >新闻资讯</a>
 										</div>
 										<div class="t_140_2">
 											<a href="javascript:" >Latest News</a>
@@ -350,7 +350,7 @@
 				}),
 				ready: function() {
 					$('a', '#newsNotice').click(function() {
-						window.location.href = $('li[data-nav="/Site/web/news.html"]', '#headerMenu').find('a').attr('href');
+						window.location.href = $('li[data-nav="/Site/web/advantage.html"]', '#headerMenu').find('a').attr('href');
 					});
 					this.$http.get(this.interfaceUrl + '/advantage/interface/list?page=1&limit=3').then(function(response) {
 						//							this.marketAnalysis.imageUrl = this.siteUrl+'/src/images/index/market-analysis.jpg';

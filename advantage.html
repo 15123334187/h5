@@ -207,24 +207,24 @@
 				var vm = new Vue({
 					el: '#webApp',
 					data: $.extend(vue.data, {
+						menuid: app.methods.getUrlArg('menuid'),
 						dataList: [],
 						pageList: {
 							index: app.methods.getUrlArg('page') || 1,
 							length: 1,
 							list: []
-						},
+						}
 					}),
 					methods: $.extend(vue.methods, {
 						jumpNews: function(id) {
-							var menuid = app.methods.getUrlArg('menuid');
-							window.location.href = this.siteUrl + '/newsDetail.html?menuid=' + menuid + '&id=' + id;
+							window.location.href = this.siteUrl + '/newsDetail.html?menuid=' + this.menuid + '&id=' + id;
 						},
 						jumpPage: function(index) {
-							window.location.href += '&page=' + index;
-						},
+							window.location.href = this.siteUrl + '/advantage.html?menuid=' + this.menuid + '&page=' + index;
+						}
 					}),
 					ready: function() {
-						var url = this.interfaceUrl + '/advantage/interface/list?page=' + this.pageList.index + '&limit=1';
+						var url = this.interfaceUrl + '/advantage/interface/list?page=' + this.pageList.index + '&limit=10';
 						this.loadList(url);
 					}
 				});

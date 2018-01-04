@@ -880,8 +880,7 @@ body {
 }
 /*底部*/
 .c_0100_bg4 {
-	/*background: url(../images/down_img1.jpg) top center no-repeat;*/
-	background: #101010;
+	background: url(../images/down_img1.jpg) top center no-repeat;
 }
 .c_1200_5 {
 	float: left;
