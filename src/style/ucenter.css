@@ -1,0 +1,173 @@
+@charset "utf-8";
+.uc-wrap{ padding: 40px 0;}
+.uc-nav{ float: left; width: 230px; box-shadow: 0px 10px 10px -5px #ccbaba;background-color: #F2F7FB;border: 1px solid #eee; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+.uc-nav h1, .uc-nav li, .uc-nav li span, .uc-nav li a{ text-align: center;}
+.uc-nav h1, .uc-nav li span, .uc-nav li a.current, .uc-nav li a:hover{ color: #fff; background: #0270ce;}
+.uc-nav h1{ height: 48px; margin-bottom: 15px; line-height: 48px; font-size: 16px; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+.uc-nav ul > li > ul{ padding: 15px 0;}
+.uc-nav ul > li > ul > li{ padding: 5px 0;}
+.uc-nav li span, .uc-nav li a{ display: inline-block; width: 100%; font-size: 14px;}
+.uc-nav li span{ height: 38px; line-height: 38px; }
+.uc-nav li a{ width: 60%; height: 34px; line-height: 34px;}
+.uc-nav li a.current, .uc-nav li a:hover{ border-radius: 38px;}
+
+.uc-container{ float: right; width: 910px; min-height: 680px;}
+.uc-container h1.title{ padding: 10px 0; font-size: 16px; border-bottom: 1px dashed #d2d2d2;}
+.uc-container h1.title.pd0{ padding: 0;}
+.uc-container h1.title .uc-tabs{ display: inline-block; padding: 10px 40px; border-bottom: 2px solid #fff;}
+.uc-container h1.title .uc-tabs.active{ color: #0270ce; border-bottom: 2px solid #0270ce;}
+
+/*form*/
+.uc-form{ margin-top: 15px;}
+.uc-form li{ padding:10px 0; line-height: 32px;}
+.uc-form li.center, .uc-form li.submit{ text-align: center;}
+.uc-form li.submit a{ height: 32px; padding: 0 40px; font-size: 16px; text-align: center; color: #0270ce; border: 1px solid #0270ce; border-radius: 33px;}
+.uc-form li.submit a:hover{ color: #fff; background: #0270ce;}
+.uc-form h1{ font-size: 16px; color: #0270ce;}
+.uc-form span, .uc-form select, .uc-form input, .uc-form a, .uc-form img{ display: inline-block; vertical-align: middle; font-size: 14px;}
+.uc-form span, .uc-form select, .uc-form input{ margin-right: 10px;}
+.uc-form span.title{ width: 320px; text-align: right;}
+.uc-form span.active{ color: #0270ce;}
+.uc-form select, .uc-form input{ width: 258px; height: 32px; border: 1px solid #d2d2d2;}
+.uc-form select{ width: 260px;}
+.uc-form select.small{ width: 125px;}
+.uc-form .gray-button{ min-width: 90px; height: 34px; padding: 0 10px; text-align: center; color: #666666; background: #dedede; border-radius: 5px;}
+.uc-form .image-code{ width: 120px; height: 34px;}
+
+/*table*/
+.uc-table { width:100%; border-collapse: collapse;}
+.uc-table.fixed{ table-layout: fixed;}
+.uc-table th, .uc-table td{ padding: 10px 0; text-align: center; font-size: 14px; border: 1px solid #bebdbd;}
+.uc-table th{ color: #fff; background: #0270ce;}
+.uc-table tr:hover{ background: #eee;}
+.uc-table .buttons{ color: #137ad1;}
+.uc-table .default{ color: #5aadf0;}
+.uc-table .success{ color: #ff9000;}
+.uc-table .error{ color: #ff4d55;}
+
+/*网上开户*/
+.uc-open-account{ float: left; width: 100%;}
+.uc-open-account li{ padding: 30px 0; font-size: 14px; border-bottom: 1px dashed #d2d2d2;}
+.uc-open-account li:last-child{ border-bottom: none;}
+.uc-open-account li.center{ text-align: center;}
+.uc-open-account i, .uc-open-account span, .uc-open-account select, .uc-open-account input{ display: inline-block; vertical-align: middle;}
+.uc-open-account i.ico{ width: 38px; height: 38px; background: url(../images/ucenter/openaccount-ico.png) no-repeat; background-position: -76px 0;}
+/*.uc-open-account li:nth-child(2) i.ico{ background-position: -38px 0;}
+.uc-open-account li:nth-child(3) i.ico{ background-position: -76px 0;}*/
+.uc-open-account span.title{ /*width: 160px;*/ margin-right: 10px; }
+.uc-open-account select, .uc-open-account input{ width: 240px; height: 35px; border: 1px solid #d2d2d2;}
+.uc-open-account input{ margin-right: 10px; background: #f4f4f4;}
+.uc-open-account a.submit{ display: inline-block; width: 110px; height: 33px; margin-right:15px; line-height: 32px; text-align: center; color: #0270ce; border: 1px solid #0270ce; border-radius: 33px;}
+.uc-open-account a.submit:hover{ color: #fff; background: #0270ce;}
+.uc-open-account .sweet-tip h1{ margin-bottom:10px; font-size: 16px;}
+.uc-open-account .sweet-tip p{ margin-left: 2em; line-height: 24px; font-size: 14px; color: #9f9f9f;}
+.uc-open-account .sweet-tip .active{ color: #fdc413;}
+
+.uc-open-account .success{ text-align: center;}	
+.uc-open-account .success h1, .uc-open-account .success h2{ font-size: 16px;}
+.uc-open-account .success h1{ line-height: 28px; color: #137ad1;}
+.uc-open-account .success h2, .uc-open-account .success p{ line-height: 24px; color: #ff9000;}
+.uc-open-account .success h2{ margin-top: 10px;}
+.uc-open-account .success p{ font-size: 14px;}
+
+/*我的主页*/
+.uc-index-userinfo{ padding: 20px 0; border-bottom: 1px dashed #d2d2d2;}
+.uc-index-userinfo .avatar, .uc-index-userinfo .msg{ float: left; margin-left: 15px;}
+.uc-index-userinfo .avatar, .uc-index-userinfo .avatar img{ width: 104px; height: 104px;}
+.uc-index-userinfo .avatar{ border: 1px solid #eaeaea;}
+.uc-index-userinfo .msg h1{ margin: 30px 0 10px; font-size: 18px; color: #0270ce;}
+.uc-index-userinfo .msg h2 span{ display: inline-block; height: 21px; margin-right: 10px; background: url(../images/ucenter/userinfo-ico.png) no-repeat;}
+.uc-index-userinfo .msg h2 .uid-ico{ width: 18px; background-position: 0 0;}
+.uc-index-userinfo .msg h2 .uid-ico.bind{ background-position: -18px 0;}
+.uc-index-userinfo .msg h2 .phone-ico{ width: 17px; background-position: -36px 0;}
+.uc-index-userinfo .msg h2 .phone-ico.bind{ background-position: -53px 0;}
+.uc-index-userinfo .msg h2 .mail-ico{ width: 22px; background-position: -70px 0;}
+.uc-index-userinfo .msg h2 .mail-ico.bind{ background-position: -92px 0;}
+.uc-index-property{ padding: 20px 0; border-bottom: 1px dashed #d2d2d2;}
+.uc-index-property li, .uc-index-property li img, .uc-index-property li span{ display: inline-block; vertical-align: top; }
+.uc-index-property li{ width: 33%; margin-right:-3px;}
+.uc-index-property li img{ width: 72px; height: 72px; margin: 0 40px 0 30px;}
+.uc-index-property li span.title{ width: 4em; text-align: center; font-size: 16px;}
+.uc-index-property li span.title em{ color: #a0a0a0;}
+.uc-index-property li span.price{ /*margin-left: 60px; line-height:72px; */font-size: 18px;}
+.uc-index-property .buttons{ margin-top: 30px; text-align: right;}
+.uc-index-property .buttons a{ display: inline-block; width: 130px; height: 40px; margin-left: 30px; line-height: 40px; font-size: 16px; text-align: center; color: #0270ce; border: 1px solid #0270ce; border-radius: 40px;}
+.uc-index-property .buttons a:hover{ color: #fff; background: #0270ce;}
+.uc-index-account{ padding: 20px 0;}
+.uc-index-account h1{ font-size: 16px; margin-bottom: 20px;}
+.uc-index-account h2{ text-align: right; font-size: 14px; color: #a0a0a0;}
+.uc-index-account h2 a{ display: inline-block; width: 130px; height: 40px; margin-left: 10px; line-height: 40px; text-align: center; color: #0270ce; border: 1px solid #0270ce; border-radius: 40px;}
+.uc-index-account h2 a:hover{ color: #fff; background: #0270ce;}
+
+/*安全中心*/
+.uc-safefy li{ float: left; width: 100%; min-height: 44px; padding: 20px 0; border-bottom: 1px dashed #d2d2d2;}
+.uc-safefy li:last-child{ border-bottom: none;}
+.uc-safefy .state, .uc-safefy .ico, .uc-safefy .content, .uc-safefy .button{ font-size: 14px;}
+.uc-safefy .state, .uc-safefy .ico, .uc-safefy .content{ display: inline-block; vertical-align: middle;}
+.uc-safefy .state:before{ content: ''; position: absolute; left: 0; top: 5px; width: 8px; height: 8px; border: 1px solid #a0a0a0; border-radius: 50%;}
+.uc-safefy .state{ position: relative; color: #a0a0a0; margin-left: 15px; padding-left: 15px;}
+.uc-safefy .state.bind:before{ background: #0270ce; border: 1px solid #0270ce;}
+.uc-safefy .state.bind{ color: #0270ce;}
+.uc-safefy .ico{ width: 44px; height: 44px; margin: 0 10px 0 20px; background:url(../images/ucenter/security-ico.png) no-repeat;}
+.uc-safefy .content h1{ margin-bottom:2px; font-size: 16px;}
+.uc-safefy .content p{ color: #999999; font-size: 14px;}
+.uc-safefy .buttons{ float: right; margin: 10px 15px 0 0; color: #ffc823; font-size: 14px;}
+.uc-safefy a.buttons:hover{ text-decoration: underline;}
+.uc-safefy .phone b{ color: #ffc823;}
+.uc-safefy .password b{ color: #ff8212;}
+.uc-safefy .mail .ico{ background-position: -44px 0;}
+.uc-safefy .real-name .ico{ background-position: -88px 0;}
+.uc-safefy .password .ico{ background-position: -132px 0;}
+.uc-safefy .card .ico{ background-position: -176px 0;}
+
+/*入金*/
+.uc-recharge li{ padding: 30px 0; font-size: 14px; border-bottom: 1px dashed #d2d2d2;}
+.uc-recharge li:last-child{ border-bottom: none;}
+.uc-recharge i, .uc-recharge span, .uc-recharge select, .uc-recharge input{ display: inline-block; vertical-align: middle;}
+.uc-recharge i.ico{ width: 38px; height: 38px; margin: 0 15px; background: url(../images/ucenter/recharge-ico.png) no-repeat;}
+.uc-recharge li:nth-child(2) i.ico{ background-position: -38px 0;}
+.uc-recharge span.title{ margin-right: 90px;}
+.uc-recharge select, .uc-recharge input{ width: 240px; height: 35px; border: 1px solid #d2d2d2;}
+.uc-recharge input{ margin-right: 10px; background: #f4f4f4;}
+.uc-recharge a.button{ float: right; width: 110px; height: 33px; margin-right:15px; line-height: 32px; text-align: center; color: #0270ce; border: 1px solid #0270ce; border-radius: 33px;}
+.uc-recharge a.button:hover{ color: #fff; background: #0270ce;}
+.uc-recharge b{ color: #0270ce;}
+.uc-recharge .sweet-tip h1{ margin-bottom:10px; font-size: 16px;}
+.uc-recharge .sweet-tip p{ margin-left: 2em; line-height: 24px; font-size: 14px; color: #9f9f9f;}
+
+/*出金*/
+.uc-withdraw li{ padding: 30px 0; font-size: 14px; border-bottom: 1px dashed #d2d2d2;}
+.uc-withdraw li:last-child{ border-bottom: none;}
+.uc-withdraw .right{ float: right;}
+.uc-withdraw i, .uc-withdraw span, .uc-withdraw input, .uc-withdraw a, .uc-withdraw b{ display: inline-block; vertical-align: middle;}
+.uc-withdraw i.ico{ width: 38px; height: 38px; margin: 0 15px; background: url(../images/ucenter/withdraw-ico.png) no-repeat;}
+.uc-withdraw li:nth-child(2) i.ico{ background-position: -38px 0;}
+.uc-withdraw li:nth-child(3) i.ico{ background-position: -114px 0;}
+/*.uc-withdraw li:nth-child(4) i.ico{ background-position: -114px 0;}*/
+.uc-withdraw span.title{ margin-right: 60px;}
+.uc-withdraw input{ width: 180px; height: 35px; border: 1px solid #d2d2d2;}
+.uc-withdraw input{ margin-right: 10px; background: #f4f4f4;}
+.uc-withdraw a.button{ width: 100px; height: 33px; margin-right:15px; line-height: 32px; text-align: center; color: #0270ce; border: 1px solid #0270ce; border-radius: 33px;}
+.uc-withdraw a.button:hover{ color: #fff; background: #0270ce;}
+.uc-withdraw b{ color: #0270ce;}
+.uc-withdraw .sweet-tip h1{ margin-bottom:10px; font-size: 16px;}
+.uc-withdraw .sweet-tip p{  margin-left: 2em; line-height: 24px; font-size: 14px; color: #9f9f9f;}
+
+.uc-withdraw .apply-result{ text-align: center;}
+.uc-withdraw .apply-result h1, .uc-withdraw .apply-result p, .uc-withdraw .apply-result a{ font-size:14px; color: #0270ce;}
+.uc-withdraw .apply-result h1{ margin:10px 0 4px; font-size: 16px;}
+.uc-withdraw .apply-result a{ display: inline-block; height: 40px; margin-top:30px; padding: 0 20px; line-height: 40px; text-align: center; color: #0270ce; border: 1px solid #0270ce; border-radius: 33px;}
+.uc-withdraw .apply-result a:hover{ color: #fff; background: #0270ce;}
+
+/*记录*/
+.uc-record h1{ margin-bottom: 20px;}
+/*.uc-record h2{ margin:20px 0; font-size: 14px;}*/
+.uc-record .detail-container{ position: relative;}
+.uc-record .detail-box:before {position:absolute;top:-8px;right:50px;content:'';display:inline-block;width:17px;height:8px; background: url(../images/ucenter/top-arrow.png) no-repeat;}
+.uc-record .detail-box{ position: absolute; top: 40px; right: 0; z-index: 999; width: 270px; padding: 10px; line-height: 24px; border: 1px solid #0270ce; background: #fff; display: none;}
+.uc-record .detail-box.loading{ height: 95px; background:#fff url(../images/common/loading.gif) center no-repeat;}
+/*.uc-record .detail-box h1, .uc-record .detail-box p{ white-space: nowrap;}*/
+.uc-record .detail-box h1{ margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px dashed #d2d2d2;}
+.uc-record .detail-box p{ padding: 0 5px; text-align: left; font-size: 14px;}
+.uc-record .detail-box p, .uc-record .detail-box p span{ color: #0270ce;}
+.uc-record .detail-box p span{ margin-left: 20px;}

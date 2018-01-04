@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head id="webHeader">
+		<title>关于我们-胜捷通国际期货平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link type="text/css" href="/Site/web/src/style/about.css" rel="stylesheet" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052 ">
+		<div id="g_main" class='g_main g_col2 '>
+			<div id="g_web" class="g_web ">
+				<div class="swiper-container" style="height: 350px;">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" v-for="banner in banner.data" :data-image="banner.filePath"></div>
+					</div>
+					<div class="swiper-pagination swiper-pagination-white" v-show="banner.pagination"></div>
+					<div class="swiper-button-next swiper-button-white" v-show="banner.next"></div>
+					<div class="swiper-button-prev swiper-button-white" v-show="banner.prev"></div>
+				</div>
+
+				<table id="webContainerTable" class="webContainerTable" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td align="center">
+								<div id="webContainer" class="webContainer">
+									<div id="container" class="container">
+										<table class="containerTop" cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr valign="top">
+													<td class="left"></td>
+													<td class="center"></td>
+													<td class="right"></td>
+												</tr>
+											</tbody>
+										</table>
+										<table class="containerMiddle" cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr valign="top">
+													<td id="containerMiddleLeft" class="containerMiddleLeft"></td>
+													<td class="containerMiddleCenter">
+														<div id="containerMiddleCenterTop" class="containerMiddleCenterTop"> </div>
+														<div id="containerForms" class="containerForms">
+															<div id="topForms" class="column forms mainForms topForms" style="display:none"> </div>
+															<table class="containerFormsMiddle" cellpadding="0" cellspacing="0">
+																<tbody>
+																	<tr>
+																		<td valign="top" id="containerFormsLeft" class="containerFormsLeft" style="display:none">
+																			<div class="containerFormsLeftTop"> </div>
+																			<div id="leftForms" class="column forms sideForms leftForms"> </div>
+																			<div class="containerFormsLeftBottom"> </div>
+																		</td>
+																		<td valign="top" id="containerFormsCenter" class="containerFormsCenter">
+																			<div id="centerTopForms" class="column forms mainForms centerTopForms">
+																				<div id="module356" _indexclass="formIndex1" _modulestyle="87" _moduleid="356" class="form form356 formIndex1 formStyle87 fk-formPack " title="" style="height: 498px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="0" _autoheight="0" _global="false" _independent="false">
+																					<div class="J_packContent f-packContent f-packContent356" id="fk-packContent356">
+																						<div class="J_packContentBg f-packContentBg f-packContentBg356"></div>
+																						<div id="module358" bannertitle="图片" _modulestyle="79" _moduleid="358" class="form form358 formStyle79" title="" style="position: absolute; top: 90px; left: 24px; width: 574px; height: 355px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="356" _autoheight="0" _global="false" _independent="false">
+																							<div class="lightModuleOuterContent lightModuleOuterContent358">
+																								<div class="floatImg floatImg_J">
+																									<a hidefocus="true" class="J_floatImg_jump">
+																										<div class="floatImgWrap"><img id="float_img_358" class="float_in_img J_defImage" src="/Site/web/src/images/about/figure.jpg" style=" height:355px; width:574px;"></div>
+																									</a>
+																								</div>
+																							</div>
+																						</div>
+																						<div id="module359" bannertitle="文本" _modulestyle="86" _moduleid="359" class="form form359 formStyle86 siteEditor " title="" style="position: absolute; top: 80px; left: 663px; width: 520px; height: 420px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="356" _autoheight="0" _global="false" _independent="false">
+																							<div class="lightModuleOuterContent lightModuleOuterContent359">
+																								<div class="fk-editor simpleText"><span style="line-height: 24px;"><font style="color: rgb(74, 179, 68);" color="#4ab344">关<font style="color: rgb(74, 179, 68);" color="#4ab344">于</font>我们</font>
+                                              <!--<div style=""><font style="color: rgb(74, 179, 68);" color="#4ab344"><br style="">
+                                                </font></div>-->
+                                              <div style=" margin-top: 10px;"><font color="#4ab344" style=""><span style="font-size:14px; color: rgb(101, 101, 101);" color="#656565">
+                                                <div > <p style=" font-size: 14px; text-indent: 2em;">江西普舍投资管理有限公司成立于2016年3月，注册资本金5000万元整，经营范围包括投资理财、投资咨询、金融管理咨询、企业策划及计算机软件开发。</p>
+    <p style="  font-size: 14px; text-indent: 2em;">为配合全球投资一体化的趋势，本公司提供环球产品交易，产品多元化，客户只须经本公司便可投资香港及其它外国主要交易所的产品，既可扩大客户的投资机会，亦可作分散投资以减低风险。公司秉承规范自律、诚实信用的理念，以持续经营、踏实稳健为宗旨，积极打造专业化期货理财服务供应商，以专业的水平，服务专业的市场，在行业内赢得了良好的口碑。</p>
+    <p style="  font-size: 14px; text-indent: 2em;">公司于2017年3月顺利通过胜捷国际金控股份有限公司（ShengJie International Holding co., LTD）合作单位资格审核，作为胜捷通国际期货平台（www.sjt6666.com）在大陆地区的唯一授权运营机构，全权负责平台建立、推广及维护运营。</p>
+    <p style="  font-size: 14px; text-indent: 2em;">2017年公司将进一步贯彻合规转型升级的发展战略，坚持“以合规经营为准绳，以经纪业务为基石，资管业务做大平台规模，投顾业务加快应用成果，子公司丰富服务手段。”的经营思路。做大业务规模，提升产业客户和机构客户服务能力；扩大子公司业务范围，提高服务实体经济的能力；加大资管业务投顾队伍建设，拓展产品发行规模，提高产品发行效率，积极打造以风险管理和财富管理为定位的现代金融企业。</p></div>
+												<!--
+                                                <div style="">13日成立的XX保险公司的基础上组建而成的保险集团公司，总部设在上</div>
+                                                <div style="">海，2007年、2009年分别在上海证交所和香港联交所成功上市。</div>
+                                                <div style="">XX保险以“做一家负责任的保险公司”为使命，以“诚信天下稳健一生，</div>
+                                                <div style="">追求卓越”为企业核心价值观，以“推动和实现可持续的价值增长”为经</div>
+                                                <div style="">营理念，不断为客户、股东、员工、社会和利益相关者创造价值，为社会</div>
+                                                <div style="">和谐做出贡献。</div>
+												-->
+                                                </span></font>
+																								</div>
+																								</span>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div id="module360" _indexclass="formIndex2" _modulestyle="87" _moduleid="360" class="form form360 formIndex2 formStyle87 fk-formPack " title="" style="height: 520px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="0" _autoheight="0" _global="false" _independent="false">
+																				<div class="J_packContent f-packContent f-packContent360" id="fk-packContent360">
+																					<div class="J_packContentBg f-packContentBg f-packContentBg360"></div>
+																					<div id="module361" bannertitle="文本" _modulestyle="86" _moduleid="361" class="form form361 formStyle86 siteEditor " title="" style="position: absolute; top: 52px; left: 23px; width: 148px; height: 31px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																						<div class="lightModuleOuterContent lightModuleOuterContent361">
+																							<div class="fk-editor simpleText"><span style="font-size: 24px;"><font style="color: rgb(74, 179, 68);" color="#4ab344">服务优势</font></span></div>
+																						</div>
+																					</div>
+																					<div id="module362" bannertitle="图片" _modulestyle="79" _moduleid="362" class="form form362 formStyle79" title="" style="position: absolute; top: 131px; left: 16px; width: 95px; height: 101px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																						<div class="lightModuleOuterContent lightModuleOuterContent362">
+																							<div class="floatImg floatImg_J">
+																								<a hidefocus="true" class="J_floatImg_jump">
+																									<div class="floatImgWrap"><img id="float_img_362" class="float_in_img J_defImage" src="/Site/web/src/images/about/ico1.png" style=" height:101px; width:95px;"></div>
+																								</a>
+																							</div>
+																						</div>
+																					</div>
+																					<div id="module363" bannertitle="文本" _modulestyle="86" _moduleid="363" class="form form363 formStyle86 siteEditor " title="" style="position: absolute; top: 138px; left: 144px; width: 412px; height: 93px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																						<div class="lightModuleOuterContent lightModuleOuterContent363">
+																							<div class="fk-editor simpleText"><span style="line-height: 16px;"><font style="color: rgb(74, 179, 68);" color="#4ab344"><span style="font-size: 18px;">安全</span></font>
+																								<div style="">
+																									<font color="#4ab344" style=""><span style="font-size: 18px;"><br style="">
+                                                </span></font>
+																									<div style=""><span style="font-size: 14px;"><span style="line-height: 25px;">客户资金与公司资产完全隔离,严格监管全面保障客户资金,平台不接触客户的任何资金。</span></span>
+																									</div>
+																								</div>
+																								</span>
+																							</div>
+																						</div>
+																					</div>
+																					<div id="module364" bannertitle="图片" _modulestyle="79" _moduleid="364" class="form form364 formStyle79" title="" style="position: absolute; top: 130px; left: 652px; width: 98px; height: 101px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																						<div class="lightModuleOuterContent lightModuleOuterContent364">
+																							<div class="floatImg floatImg_J">
+																								<a hidefocus="true" class="J_floatImg_jump">
+																									<div class="floatImgWrap"><img id="float_img_364" class="float_in_img J_defImage" src="/Site/web/src/images/about/ico2.png" style=" height:101px; width:98px;"></div>
+																								</a>
+																							</div>
+																						</div>
+																					</div>
+																					<div id="module365" bannertitle="文本" _modulestyle="86" _moduleid="365" class="form form365 formStyle86 siteEditor " title="" style="position: absolute; top: 136px; left: 777px; width: 385px; height: 95px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																						<div class="lightModuleOuterContent lightModuleOuterContent365">
+																							<div class="fk-editor simpleText"><span style="line-height: 16px;"><font color="#4ab344"><span style="font-size: 18px;">正规</span></font>
+																								<div style="">
+																									<font color="#4ab344" style=""><span style="font-size: 18px;"><br style="">
+                                                </span></font>
+																									<div style=""><span style="font-size: 14px;"><span style="line-height: 26px;">客户的投资账户均为公司真实账户，所有交易买卖都在真实的交易市场中进行，有效的保障了客户的合法权益。</span></span>
+																									</div>
+																								</div>
+																								</span>
+																							</div>
+																						</div>
+																					</div>
+																					<div id="module366" bannertitle="图片" _modulestyle="79" _moduleid="366" class="form form366 formStyle79" title="" style="position: absolute; top: 287px; left: 13px; width: 96px; height: 96px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																						<div class="lightModuleOuterContent lightModuleOuterContent366">
+																							<div class="floatImg floatImg_J">
+																								<a hidefocus="true" class="J_floatImg_jump">
+																									<div class="floatImgWrap"><img id="float_img_366" class="float_in_img J_defImage" src="/Site/web/src/images/about/ico3.png" style=" height:96px; width:96px;"></div>
+																								</a>
+																							</div>
+																						</div>
+																					</div>
+																					<div id="module367" bannertitle="文本" _modulestyle="86" _moduleid="367" class="form form367 formStyle86 siteEditor " title="" style="position: absolute; top: 291px; left: 143px; width: 412px; height: 95px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																						<div class="lightModuleOuterContent lightModuleOuterContent367">
+																							<div class="fk-editor simpleText"><span style="line-height: 16px;"><font color="#4ab344"><span style="font-size: 18px;">便捷</span></font>
+																								<div style="">
+																									<font color="#4ab344" style=""><span style="font-size: 18px;"><br style="">
+                                                </span></font>
+																									<div style=""><span style="font-size: 14px;"><span style="line-height: 26px;">
+                                                  <div>24小时专业在线支付平台，出入金操作快捷简单安全。</div>
+																									</div>
+																								</div>
+																								</span>
+																									</div>
+																								</div>
+																							</div>
+																							<div id="module368" bannertitle="图片" _modulestyle="79" _moduleid="368" class="form form368 formStyle79" title="" style="position: absolute; top: 287px; left: 653px; width: 98px; height: 96px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																								<div class="lightModuleOuterContent lightModuleOuterContent368">
+																									<div class="floatImg floatImg_J">
+																										<a hidefocus="true" class="J_floatImg_jump">
+																											<div class="floatImgWrap"><img id="float_img_368" class="float_in_img J_defImage" src="/Site/web/src/images/about/ico4.png" style=" height:96px; width:98px;"></div>
+																										</a>
+																									</div>
+																								</div>
+																							</div>
+																							<div id="module369" bannertitle="文本" _modulestyle="86" _moduleid="369" class="form form369 formStyle86 siteEditor " title="" style="position: absolute; top: 290px; left: 777px; width: 400px; height: 126px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="360" _autoheight="0" _global="false" _independent="false">
+																								<div class="lightModuleOuterContent lightModuleOuterContent369">
+																									<div class="fk-editor simpleText"><span style="line-height: 13px;"><span style=""><font color="#4ab344" style=""><span style="font-size: 18px;">服务</span></font>
+																										</span>
+																										<div style="">
+																											<font color="#4ab344" style=""><span style="font-size: 18px;"><br style="">
+                                                </span></font><span style="">
+                                                <div style=""><span style="">
+                                                  <div style=""><span style="font-size: 14px;"></span></div>
+																										</span>
+																									</div>
+																									</span>
+																								</div>
+																								</span><span style="line-height: 26px;"><span style="">
+                                              <div style=""><span style="">
+                                                <div style=""><span style="">
+                                                  <div style=""><span style="font-size: 14px;">专业风控，高效客服助力更多投资成就，最真挚的态度来协助客户在交易市场中快人一步，有效的使客户抓住有利的投资时机，创造最大的价值。</span></div>
+																							</span>
+																							<div style=""></div>
+																						</div>
+																						</span>
+																					</div>
+																					</span>
+																					<div style=""><span style="">
+                                                <div style="">
+                                                  <div style=""></div>
+                                                </div>
+                                                </span></div>
+																					</span>
+																					<div><span style="line-height: 16px;">
+                                                <div style="">
+                                                  <div style="line-height: 16px;"><span style="font-size: 14px; line-height: 16px;"></span><br>
+																					</div>
+																				</div>
+																				</span>
+																			</div>
+														</div>
+									</div>
+								</div>
+			</div>
+		</div>
+		<div id="module370" _indexclass="formIndex3" _modulestyle="87" _moduleid="370" class="form form370 formIndex3 formStyle87 fk-formPack " title="" style="height: 600px;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="0" _autoheight="0" _global="false" _independent="false">
+			<div class="J_packContent f-packContent f-packContent370" id="fk-packContent370">
+				<div class="J_packContentBg f-packContentBg f-packContentBg370"></div>
+				<div id="module371" bannertitle="文本" _modulestyle="86" _moduleid="371" class="form form371 formStyle86 siteEditor " title="" style="position: absolute; top: 20px; left: 60px; width: 1200px; " _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="370" _autoheight="0" _global="false" _independent="false">
+					<div class="lightModuleOuterContent lightModuleOuterContent371">
+						<div class="fk-editor simpleText">
+							<font style="color: rgb(45, 45, 45);" color="#2d2d2d"><span style="font-size: 28px;">联系我们 &nbsp;<span style="font-size: 14px;"><font style="color: rgb(97, 97, 97);" color="#616161">抓紧时机创造更多财富</font></span></span>
+							</font>
+							<div>
+								<font style="color: rgb(45, 45, 45);" color="#2d2d2d"><span style="font-size: 28px;"><span style="font-size: 14px;"><font style="color: rgb(97, 97, 97);" color="#616161"><br>
+                                                </font></span></span>
+								</font>
+							</div>
+							<!--<div><span style="font-size: 14px;"><font color="#616161"><span style="line-height: 32px;">
+                                                <div>联系QQ：2485602133</div>
+                                                <div style="">手机号码：15297911749</div>
+                                                <div style="">联系邮箱：2485602133@qq.com</div>
+                                                <div style="">联系电话：0791-83901800&nbsp;&nbsp;400-000-1216</div>
+                                                <div style="">联系地址：江西省南昌市高新区紫阳大道2999号A栋15楼</div>
+                                                </span></font>
+								</span>
+							</div>-->
+							<div style=" float: left; width: 540px; line-height: 32px; font-size: 14px; color: #616161;">
+江西普舍投资管理有限公司 <br />
+联系QQ：2485602133 <br />               
+联系邮箱：2485602133@qq.com       <br />                        
+联系电话：0791-83901800&nbsp;&nbsp;400-000-1216     <br />                              
+联系地址：江西省南昌市红谷滩新区红谷中大道998号绿地中央广场A1#办公楼-508室            <br />        
+<div style="width: 100%; height: 240px;  margin-top: 10px;" id="allmap"></div>
+	
+							</div>
+							
+							<div style=" float: left; width: 540px;  margin-left: 70px; line-height: 32px; font-size: 14px; color: #616161;">
+勝捷國際金控股份有限公司： <br />
+注册电话：00852-27935511 <br />     
+传真号码：00852-35902333<br />   
+联系地址：香港九龙旺角道33号凯途发展大厦7楼04室   <br />    UNIT 04, 7/F, BRIGHT WAY TOWER, NO. 33 MONG KOK ROAD, KOWLOON <br />          
+<div style="width: 100%; height: 240px; margin-top: 40px;" id="allmap1"></div>
+							</div>
+							
+							<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Br8IcORCTS6KH5qi1WKNNoAXOyQlyGzi"></script>
+							<script type="text/javascript">
+var map = new BMap.Map("allmap");
+var point = new BMap.Point(115.861739,28.690974);
+var marker = new BMap.Marker(point);  // 创建标注
+map.addOverlay(marker);              // 将标注添加到地图中
+map.centerAndZoom(point, 18);
+var opts = {
+  width : 100,     // 信息窗口宽度
+  height: null,     // 信息窗口高度
+  title : "江西普舍投资管理有限公司 " // 信息窗口标题
+}
+var infoWindow = new BMap.InfoWindow("", opts);  // 创建信息窗口对象 
+  marker.addEventListener("click", function(){          
+	map.openInfoWindow(infoWindow,point); //开启信息窗口
+});
+
+var map1 = new BMap.Map("allmap1");
+var point1 = new BMap.Point(114.177285,22.324878);
+var marker1 = new BMap.Marker(point1);  // 创建标注
+map1.addOverlay(marker1);              // 将标注添加到地图中
+map1.centerAndZoom(point1, 18);
+var opts1 = {
+  width : 100,     // 信息窗口宽度
+  height: null,     // 信息窗口高度
+  title : "勝捷國際金控股份有限公司 " // 信息窗口标题
+}
+var infoWindow1 = new BMap.InfoWindow("", opts1);  // 创建信息窗口对象 
+  marker1.addEventListener("click", function(){          
+	map1.openInfoWindow(infoWindow1,point1); //开启信息窗口
+});
+							</script>
+						</div>
+					</div>
+				</div>
+				<div id="module372" _modulestyle="32" _moduleid="372" class="form form372 formStyle32" title="" style="position: absolute; top: 110px; left: 770px; width: 380px; height: 405px; display: none;" _side="0" _intab="0" _inmulmcol="0" _infullmeasure="0" _inpack="370" _autoheight="0" _global="false" _independent="false">
+					
+					<!--<img style=" float: right; width: 90%;" src="/Site/web/src/images/about/map.png">-->
+					<table class=" formMiddle formMiddle372" style="height:362px; display: none;" cellpadding="0" cellspacing="0">
+						<tbody>
+							<tr>
+								<td class="formMiddleLeft formMiddleLeft372"></td>
+								<td class="formMiddleCenter formMiddleCenter372 " valign="top">
+									<div class="formMiddleContent formMiddleContent372 fk-formContentOtherPadding" tabstyle="0" style="height: 352px; overflow-y: hidden;">
+										<div class="siteForm">
+											<table id="siteFormItems_N_U2" class="siteFormItemTable_N_lr_U" cellpadding="0" cellspacing="0">
+												<tbody>
+													<tr class="siteFormItem_N_U">
+														<td width="100%" valign="middle" style="">
+															<div class="J_siteFormPanel" style="width: 95%;margin: 0px auto;">
+																<div class="J_siteFormItem" style="width: 100%;">
+																	<div class="siteFormItemShowName_N_U" style="float:left;width:20%;text-align: right;">
+																		<table width="100%" style="" class="siteFormItems_N_U_C" cellpadding="0" cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td width="100%" style="padding:0 0 0 10%;">姓名</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																	<div class="siteFormMiddle" style="width:77%;float:left;margin-left:2%;">
+																		<input _show="0" _id="0" class="g_itext resize" type="text" name="M372F2siteFormInput0" id="M372F2siteFormInput0" maxlength="100" _placeholder="" placeholder="">
+																		<div class="star" style="line-height:40px;">*</div>
+																	</div>
+																</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															<div class="siteFormItemLink_N_U"></div>
+														</td>
+													</tr>
+													<tr class="siteFormItem_N_U">
+														<td width="100%" valign="middle" style="">
+															<div class="J_siteFormPanel" style="width: 95%;margin: 0px auto;">
+																<div class="J_siteFormItem" style="width: 100%;">
+																	<div class="siteFormItemShowName_N_U" style="float:left;width:20%;text-align: right;">
+																		<table width="100%" style="" class="siteFormItems_N_U_C" cellpadding="0" cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td width="100%" style="padding:0 0 0 10%;">电话</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																	<div class="siteFormMiddle" style="width:77%;float:left;margin-left:2%;">
+																		<input _show="0" _id="1" class="g_itext resize" type="text" name="M372F2siteFormInput1" id="M372F2siteFormInput1" maxlength="100" _placeholder="" placeholder="">
+																		<div class="star" style="line-height:40px;">*</div>
+																	</div>
+																</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															<div class="siteFormItemLink_N_U"></div>
+														</td>
+													</tr>
+													<tr class="siteFormItem_N_U">
+														<td width="100%" valign="middle" style="">
+															<div class="J_siteFormPanel" style="width: 95%;margin: 0px auto;">
+																<div class="J_siteFormItem" style="width: 100%;">
+																	<div class="siteFormItemShowName_N_U" style="float:left;width:20%;text-align: right;">
+																		<table width="100%" style="height:100px;float:right;" class="siteFormItems_N_U_C" cellpadding="0" cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td width="100%" style="padding:0 0 0 10%;">内容</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																	<div class="siteFormMiddle" style="width:77%;float:left;margin-left:2%;">
+																		<textarea _show="0" _id="2" class="g_textarea resize" id="M372F2siteFormTextArea2" cols="50" rows="3" maxlength="1000" _placeholder="" placeholder=""></textarea>
+																		<div class="star" style="line-height:100px;">*</div>
+																	</div>
+																</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															<div class="siteFormItemLink_N_U"></div>
+														</td>
+													</tr>
+													<tr>
+														<td width="100%" valign="middle">
+															<div class="J_siteFormPanel" style="width: 95%;margin: 0px auto;">
+																<div class="J_siteFormItem" style="width: 100%;padding-top:4px;">
+																	<div class="siteFormMiddle" style="width:77%;float:left;margin-left:22%;line-height:40px;">
+																		<div id="siteFormMsgM372F2" style="width:93%;margin-left:0;" class="siteFormMsg g_tip"></div>
+																	</div>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="siteFormAddButton">
+												<table width="100%" cellpadding="0" cellspacing="0" class="siteFormItemTable_N_lr_U">
+													<tbody>
+														<tr class="siteFormItem_N_U">
+															<td style="padding:10px 0 12px 0;" width="100%">
+																<div class="F2siteFormItemShowVal" style="width:95%;margin: 0px auto;">
+																	<div id="buttonStyle" style="width: 39.3%; height: 60px; margin-left:22%;_margin:0 auto;*margin:0 auto;">
+																		<div class="s_ibutton s_ibutton7">
+																			<div style="cursor:pointer;" onClick="Site.siteFormAdd(372, 2, F2siteFormItemList, false, true,&quot;&quot;,0)">
+																				<div class="left"></div>
+																				<div style="min-width:124px;" id="M372F2siteFormAddButton" class="middle">提交</div>
+																				<div class="right"></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td class="formMiddleRight formMiddleRight372"></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="formBottom formBottom372" cellpadding="0" cellspacing="0">
+						<tbody>
+							<tr>
+								<td class="left left372"></td>
+								<td class="center center372"></td>
+								<td class="right right372"></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="clearfloat clearfloat372"></div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="containerFormsCenterMiddle J_containerFormsCenterMiddle">
+			<div id="middleLeftForms" class="column forms mainForms middleLeftForms" style="display:none"> </div>
+			<div id="middleRightForms" class="column forms mainForms middleRightForms" style="display:none"> </div>
+			<div class="clearfloat"></div>
+		</div>
+		<div id="centerBottomForms" class="column forms mainForms centerBottomForms" style="display:none"> </div>
+		</td>
+		<td valign="top" id="containerFormsRight" class="containerFormsRight" style="display:none">
+			<div class="containerFormsRightTop"> </div>
+			<div id="rightForms" class="column forms sideForms rightForms"> </div>
+			<div class="containerFormsRightBottom"> </div>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+		<div id="bottomForms" class="column forms mainForms bottomForms" style="display:none"> </div>
+		<div id="containerPlaceholder" class="containerPlaceholder"></div>
+		</div>
+		<div id="containerMiddleCenterBottom" class="containerMiddleCenterBottom"> </div>
+		</td>
+		<td id="containerMiddleRight" class="containerMiddleRight"></td>
+		</tr>
+		</tbody>
+		</table>
+		<table class="containerBottom" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr valign="top">
+					<td class="left"></td>
+					<td class="center"></td>
+					<td class="right"></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		</div>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+		</div>
+		</div>
+		<script>
+			ui.loader('about', function() {
+				var newList = [];
+				var vm = new Vue({
+					el: '#webApp',
+					data: vue.data,
+					methods: vue.methods,
+					ready: function() {}
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head>
+		<title>核心业务-胜捷通国际期货平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link type="text/css" href="/Site/web/src/style/news.css" rel="stylesheet" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052 ">
+		<div id="g_main" class='g_main g_col2 '>
+			<div id="g_web" class="g_web ">
+				<div class="swiper-container" style="height: 350px;">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" v-for="banner in banner.data" :data-image="banner.filePath"></div>
+					</div>
+					<div class="swiper-pagination swiper-pagination-white" v-show="banner.pagination"></div>
+					<div class="swiper-button-next swiper-button-white" v-show="banner.next"></div>
+					<div class="swiper-button-prev swiper-button-white" v-show="banner.prev"></div>
+				</div>
+
+				<div class="news-list">
+					<ul>
+						<li v-for="list in newList">
+							<h1><a href="javascript:" @click="jumpUrl(list.id)" v-text="list.title"></a></h1>
+							<p v-text="list.brief"></p>
+							<span class="time" v-text="list.gmtCreate"></span>
+						</li>
+					</ul>
+					<div class="load-more">
+						<a href="javascript:" v-text="loadMore.txt" @click="loadNews"></a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<script>
+			ui.loader('business', function() {
+				var newList = [];
+				var vm = new Vue({
+					el: '#webApp',
+					data: $.extend(vue.data, {
+						newList: [],
+						loadMore: {page: 0, limit: 10, txt: ''}
+					}),
+					methods: $.extend(vue.methods, {
+						jumpUrl: function(id) {
+							var menuid = app.methods.getUrlArg('menuid');
+							window.location.href = this.siteUrl+'/newsDetail.html?menuid='+menuid+'&id='+id+'&type=business';	
+						},
+						loadNews: function() {
+							if(this.loadMore.txt != '加载中...') {
+								var url = this.interfaceUrl + '/business/interface/list?page=' + (++this.loadMore.page) + '&limit=' + this.loadMore.limit;
+								this.loadMore.txt = '加载中...';
+								this.$http.get(url).then(function(response) {
+									var list = response.body.page.list;
+									if(this.loadMore.page > 1 && list.length < this.loadMore.limit)
+										this.loadMore.txt = '没有更多的数据了';
+									else {
+										for(var index in list) {
+											newList.push(list[index]);
+										}
+										this.newList = newList;
+										this.loadMore.txt = '点击加载更多';
+									}
+								});
+							}
+						}
+					}),
+					ready: function() {
+						this.loadNews();
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,562 @@
+﻿.financinglist_box
+{
+    border: 1px solid #c2d9e8;
+    min-height: 300px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.financinglist_box * { font-size:14px}
+
+
+.financinglist_bar table
+{
+    width: 100%;
+    text-align: left;
+}
+
+.financinglist_bar table tr td
+{
+    border-bottom: 1px solid #c2d9e8;
+}
+
+.financinglist_bar table tr td.td1
+{
+    padding-left: 35px;
+    width: 156px;
+}
+
+.financinglist_bar table tr td.td2
+{
+    width: 190px;
+}
+
+.financinglist_bar table tr td.td3
+{
+    width: 190px;
+}
+
+.financinglist_bar table tr td.td4
+{
+    width: 170px;
+}
+
+.financinglist_bar table tr.alternate
+{
+    background-color: #f0f5f9;
+}
+
+.financinglist_bar table thead tr
+{
+    height: 42px;
+    line-height: 42px;
+}
+
+.financinglist_bar table tbody
+{
+    color: #666;
+}
+
+.financinglist_bar table tbody tr
+{
+    height: 74px;
+    line-height: 74px;
+}
+
+.green_27ae60
+{
+    color: #27ae60;
+}
+
+.red_bf191d
+{
+    color: #bf191d;
+}
+
+/*管理记录*/
+.financingmanagelist_bar
+{
+}
+
+.financingmanagelist_bar table
+{
+    width: 100%;
+    text-align: left;
+}
+
+.financingmanagelist_bar table tr td
+{
+    border-bottom: 1px solid #c2d9e8;
+}
+
+.financingmanagelist_bar table tr.alternate
+{
+    background-color: #f0f5f9;
+}
+
+.financingmanagelist_bar table thead tr
+{
+    height: 42px;
+    line-height: 42px;
+}
+
+.financingmanagelist_bar table tbody
+{
+    color: #666;
+}
+
+.financingmanagelist_bar table tbody tr
+{
+    height: 74px;
+    line-height: 74px;
+}
+
+.financingmanagelist_bar table tr td.td1
+{
+    padding-left: 35px;
+    width: 165px;
+}
+
+.financingmanagelist_bar table tr td.td2
+{
+    width: 115px;
+}
+
+.financingmanagelist_bar table tr td.td3
+{
+    width: 140px;
+}
+
+.financingmanagelist_bar table tr td.td4
+{
+    width: 88px;
+}
+
+.financingmanagelist_bar table tr td.td5
+{
+    width: 135px;
+}
+
+.financingmanagelist_bar table tr td.td6
+{
+    width: 145px;
+}
+
+.financingmanagelist_bar table tr td.td7
+{
+}
+
+/*历史记录*/
+.financinghistorylist_bar
+{
+}
+
+.financinghistorylist_bar table
+{
+    width: 100%;
+    text-align: left;
+}
+
+.financinghistorylist_bar table tr td
+{
+    border-bottom: 1px solid #c2d9e8;
+}
+
+.financinghistorylist_bar table tr.alternate
+{
+    background-color: #f0f5f9;
+}
+
+.financinghistorylist_bar table thead tr
+{
+    height: 42px;
+    line-height: 42px;
+}
+
+.financinghistorylist_bar table tbody
+{
+    color: #666;
+}
+
+.financinghistorylist_bar table tbody tr
+{
+    height: 74px;
+    line-height: 74px;
+}
+
+.financinghistorylist_bar table tr td.td1
+{
+    padding-left: 35px;
+    width: 105px;
+}
+
+.financinghistorylist_bar table tr td.td2
+{
+    width: 108px;
+}
+
+.financinghistorylist_bar table tr td.td3
+{
+    width: 138px;
+}
+
+.financinghistorylist_bar table tr td.td4
+{
+    width: 134px;
+}
+
+.financinghistorylist_bar table tr td.td5
+{
+    width: 160px;
+}
+
+.financinghistorylist_bar table tr td.td6
+{
+    width: 160px;
+}
+
+.financinghistorylist_bar table tr td.td7
+{
+    vertical-align: middle;
+}
+
+.financinghistorylist_bar table tr td.td7 a
+{
+    display: block;
+    float: left;
+    color: #666;
+    background: url(../../images/uc/bg_blue_sub.png) no-repeat left center;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 36px;
+}
+
+.financinghistorylist_bar table tr td.td7 a:hover
+{
+    color: #fd4404;
+    background: url(../../images/uc/bg_red_sub.png) no-repeat left center;
+}
+/*子账户*/
+.finsubaccountlist_bar
+{
+}
+
+.finsubaccountlist_bar table
+{
+    width: 100%;
+    text-align: left;
+}
+
+.finsubaccountlist_bar table tr td
+{
+    border-bottom: 1px solid #c2d9e8;
+}
+
+.finsubaccountlist_bar table tr.alternate
+{
+    background-color: #f0f5f9;
+}
+
+.finsubaccountlist_bar table thead tr
+{
+    height: 42px;
+    line-height: 42px;
+}
+
+.finsubaccountlist_bar table tbody
+{
+    color: #666;
+}
+
+.finsubaccountlist_bar table tbody tr
+{
+    height: 58px;
+    line-height: 58px;
+}
+
+.finsubaccountlist_bar table tr td.td1
+{
+    padding-left: 35px;
+    width: 116px;
+}
+
+.finsubaccountlist_bar table tr td.td2
+{
+    width: 116px;
+}
+.finsubaccountlist_bar table tr td.td3
+{
+    width: 105px;
+}
+.finsubaccountlist_bar table tr td.td4
+{
+    width: 130px;
+}
+.finsubaccountlist_bar table tr td.td5
+{
+    width: 107px;
+}
+.finsubaccountlist_bar table tr td.td6
+{
+    width: 107px;
+}
+.finsubaccountlist_bar table tr td.td7
+{
+    width: 130px;
+}
+.finsubaccountlist_bar table tr td.td8 a span
+{
+    display: block;
+    float: left;
+}
+.finsubaccountlist_bar table tr td.td8 a
+{
+    display: block;
+    float: left;
+    color: #666; /*background: url(../../images/uc/bg_blue_fu.png) no-repeat left center;*/
+    height: 26px;
+    line-height: 26px; /*padding-left: 36px;*/
+}
+
+.finsubaccountlist_bar table tr td.td8 a:hover
+{
+    color: #fd4404; /*background: url(../../images/uc/bg_red_fu.png) no-repeat left center;*/
+}
+
+/*资金记录*/
+.fundrecordlist_bar
+{
+	padding:20px
+}
+
+.fundrecordlist_bar table
+{
+    width: 100%;
+    text-align: left;
+}
+
+.fundrecordlist_bar table tr td
+{
+    border-bottom: 1px solid #c2d9e8;
+}
+
+.fundrecordlist_bar table tr.alternate
+{
+    background-color: #f0f5f9;
+}
+
+.fundrecordlist_bar table thead tr
+{
+    height: 42px;
+    line-height: 42px;
+}
+
+.fundrecordlist_bar table tbody
+{
+    color: #666;
+}
+
+.fundrecordlist_bar table tbody tr
+{
+    height: 40px;
+}
+
+.fundrecordlist_bar table tr td.td1
+{
+    padding-left: 35px;
+    width: 75px;
+}
+.fundrecordlist_bar table tr td.td2
+{
+    width: 105px;
+}
+
+.fundrecordlist_bar table tr td.td3
+{
+    width: 100px;
+}
+.fundrecordlist_bar table tr td.td4
+{
+    width: 98px;
+}
+.fundrecordlist_bar table tr td.td5
+{
+    width: 100px;
+}
+.fundrecordlist_bar table tr td.td6
+{
+    width: 100px;
+}
+.fundrecordlist_bar table tr td.td7
+{
+    width: 125px;
+}
+.fundrecordlist_bar table tr td.td8
+{
+    padding-right: 10px;
+}
+
+
+/*审核中*/
+.finauditlist_bar
+{
+    min-height: 450px;
+}
+
+.finauditlist_bar table
+{
+    width: 100%;
+    text-align: left;
+}
+
+.finauditlist_bar table tr td
+{
+    border-bottom: 1px solid #c2d9e8;
+}
+
+.finauditlist_bar table tr.alternate
+{
+    background-color: #f0f5f9;
+}
+
+.finauditlist_bar table thead tr
+{
+    height: 42px;
+    line-height: 42px;
+}
+
+.finauditlist_bar table tbody
+{
+    color: #666;
+}
+
+.finauditlist_bar table tbody tr
+{
+    height: 70px;
+}
+
+.finauditlist_bar table tr td.td1
+{
+    padding-left: 35px;
+    width: 50px;
+}
+.finauditlist_bar table tr td.td2
+{
+    width: 130px;
+}
+
+.finauditlist_bar table tr td.td3
+{
+    width: 98px;
+}
+.finauditlist_bar table tr td.td4
+{
+    width: 90px;
+}
+.finauditlist_bar table tr td.td5
+{
+    width: 98px;
+}
+.finauditlist_bar table tr td.td6
+{
+    width: 95px;
+}
+.finauditlist_bar table tr td.td7
+{
+    width: 125px;
+}
+.finauditlist_bar table tr td.td8
+{
+    padding-right: 10px;
+}
+.finauditlist_bar table tr td.td7 span
+{
+    display: block;
+    line-height: 28px;
+    float: left;
+}
+
+.finauditlist_bar table tr td a
+{
+    color: #666;
+}
+.finauditlist_bar table tr td a:hover
+{
+    color: #ff6a00;
+}
+
+
+
+/*融资记录*/
+.finapplylist_bar
+{
+    min-height: 450px;
+}
+
+.finapplylist_bar table
+{
+    width: 100%;
+    text-align: left;
+}
+
+.finapplylist_bar table tr td
+{
+    border-bottom: 1px solid #c2d9e8;
+}
+
+.finapplylist_bar table tr.alternate
+{
+    background-color: #f0f5f9;
+}
+
+.finapplylist_bar table thead tr
+{
+    height: 42px;
+    line-height: 42px;
+}
+
+.finapplylist_bar table tbody
+{
+    color: #666;
+}
+
+.finapplylist_bar table tbody tr
+{
+    height: 70px;
+}
+
+.finapplylist_bar table tr td.td1
+{
+    padding-left: 35px;
+    width: 100px;
+}
+.finapplylist_bar table tr td.td2
+{
+    width: 80px;
+}
+
+.finapplylist_bar table tr td.td3
+{
+    width: 150px;
+}
+.finapplylist_bar table tr td.td4
+{
+    width: 90px;
+}
+.finapplylist_bar table tr td.td5
+{
+    width: 150px;
+}
+.finapplylist_bar table tr td.td6
+{
+    width: 100px;
+}
+.finapplylist_bar table tr td.td7
+{
+    width: 130px;
+}
+.finapplylist_bar table tr td.td8
+{
+    width: 100px;
+}
+

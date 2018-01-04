@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head id="webHeader">
+		<title>组织架构-胜捷通国际期货平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link type="text/css" href="/Site/web/src/style/about.css" rel="stylesheet" />
+		<script src="/Site/web/src/script/app.js"></script>
+		<style>
+			.organizationChart{ padding: 20px 0 40px; text-align: center;}
+			.organizationChart img{ width: 840px;}
+		</style>
+	</head>
+
+	<body class="g_body g_locale2052 ">
+		<div id="g_main" class='g_main g_col2 '>
+			<div id="g_web" class="g_web ">
+				<div class="swiper-container" style="height: 350px;">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" v-for="banner in banner.data" :data-image="banner.filePath"></div>
+					</div>
+					<div class="swiper-pagination swiper-pagination-white" v-show="banner.pagination"></div>
+					<div class="swiper-button-next swiper-button-white" v-show="banner.next"></div>
+					<div class="swiper-button-prev swiper-button-white" v-show="banner.prev"></div>
+				</div>
+				
+				<div class="organizationChart md">
+					<img src="src/images/about/organizationChart.jpg" alt="">
+				</div>
+			</div>
+		</div>
+		<script>
+			ui.loader('about', function() {
+				var newList = [];
+				var vm = new Vue({
+					el: '#webApp',
+					data: vue.data,
+					methods: vue.methods,
+					ready: function() {}
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head id="webHeader">
+		<title>出金申请-源泰金控-专业期货服务平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link type="text/css" href="/Site/web/src/style/ucenter.css" rel="stylesheet" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+		<div id="g_main" class='g_main g_col2 '>
+			<div id="g_web" class="g_web ">
+				<div id="ucenter-wrap" class="uc-wrap md clearfix">
+					<div class="uc-container">
+						<h1 class="title">出金</h1>
+						<ul class="uc-withdraw">
+							<li class="apply-result">
+								<img src="{{siteUrl}}/src/images/ucenter/apply-success.png">
+								<h1>您已成功提交出金申请！</h1>
+								<p>请等待管理员审核。</p>
+								<p>
+									<a href="{{siteUrl}}/ucenter/withdraw/record.html">查看出金记录</a>
+								</p>
+							</li>
+							<li class="sweet-tip">
+								<h1>温馨提示</h1>
+								<p>1. 出金完全免费</p>
+								<p>2. 一个帐号只能绑定一张银行卡</p>
+								<p>3. 每日的出金限额依据各银行限额为准</p>
+								<p>4. 出金时间为周一至周五 9:00-22:00</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			app.ui.loader('ucenter', 'withdraw');
+		</script>
+	</body>
+
+</html>

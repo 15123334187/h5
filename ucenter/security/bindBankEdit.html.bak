@@ -1,0 +1,287 @@
+
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head>
+		<template v-if="userinfo.isBindBank == 0">
+			<title>绑定银行卡-胜捷通国际期货平台</title>
+		</template>
+		<template v-else>
+			<title>修改银行卡-胜捷通国际期货平台</title>
+		</template>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/global.css">
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/ui.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/topup.css" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+
+		<div id="g_web" class="g_web ">
+
+			<!--main-->
+
+			<div id="ucenter-wrap">
+
+				<div class="layout_1000">
+					<div class="topup_box">
+						<div id="divBlockTitle" class="block_title">
+							<div class="status_box">
+								
+                                <template v-if="userinfo.isBindBank == 0">
+                                	<a class="current">绑定银行卡</a>
+                                    
+                                </template>
+                                <template v-else>
+                                	<a class="current">修改银行卡</a>
+
+                                </template>
+
+                                
+								<!--<a href="Withdraw.aspx">提现</a>
+								<a href="FundRecord.aspx">资金记录</a>-->
+							</div>
+						</div>
+						<!--<div class="tab_box">
+							<div class="tab1 active">
+								<a class="aCardType" href="javascript:" data-val="1">储 蓄 卡</a>
+							</div>
+
+						</div>-->
+						<div id="paytype_1" class="paytype_list_box">
+                        
+							<div class="Man_body">
+								<br />
+								<dl>
+									<dt>开户银行：</dt>
+									<dd>
+										<select style=" width: 172px;" class="input" v-model="bankName">
+											<option v-for="bank in bankType" :value="bank.value" v-text="bank.name"></option>
+										</select>
+
+									</dd>
+								</dl>
+
+								<br />
+                                <style>
+                               	 .input.small { min-width:130px}
+                                </style>
+								<dl>
+									<dt>开户地区：</dt>
+									<dd>
+										<select id="s_province" class="input small"></select><select style="margin-left:10px" id="s_city" class="input small"></select>
+									</dd>
+								</dl>
+                                <br />
+                                <dl>
+									<dt>支行名称：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="bankNote" maxlength="32" />
+									</dd>
+								</dl>
+                                 <br />
+                                 <dl>
+									<dt>开户人姓名：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="openName" maxlength="4" />
+									</dd>
+								</dl>
+                                  <br />
+                                 <dl>
+									<dt>身份证号码：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="idCard" maxlength="18" />
+									</dd>
+								</dl>
+                                  <br />
+                                 <dl>
+									<dt>储蓄卡卡号：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="accounts" maxlength="19" />
+									</dd>
+								</dl>
+                                  <br />
+                                 <dl>
+									<dt>用户名：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="username" readonly />
+									</dd>
+								</dl>
+                                <br />
+                                <dl>
+									<dt>登录密码：</dt>
+									<dd>
+	<input style="margin-right:10px" type="password" class="input index_te" v-model="smsCode.value" maxlength="32" />
+	<!--<a class="gray-button" href="javascript:" v-show="smsCode.getShow" @click="_smsCode" v-text="smsCode.getText"></a><span class="gray-button" v-show="smsCode.cdShow"><span v-text="smsCode.cdTime"></span>S重新获取</span>-->
+</dd>
+								</dl>
+                                 <br />
+                                 <dl>
+									<dt>验证码：</dt>
+									<dd>
+										<input style="display:inline-block; vertical-align:top; margin-right:10px" type="text" class="input index_te" v-model="captcha.value" maxlength="5"  /><a style=" display:inline-block; vertical-align:top" href="javascript:" @click="getCaptcha"><img style="height:40px" :src="captcha.url" class="image-code" alt=""></a></li>
+
+									</dd>
+								</dl>
+                                <br />
+								<!--<dl>
+									<dt>实际充值金额：</dt>
+									<dd>
+										<span id="showData" style="color: Red; font-size: 18px;">0.00元</span>
+									</dd>
+									<dd></dd>
+								</dl>-->
+								<div class="submit">
+									<input type="button" id="BtnAdd " @click="submit" class="btn width180" v-model="submitTxt">
+									<input id="hUserCode" type="hidden">
+								</div>
+								<br>
+								
+							</div>
+
+						</div>
+
+						
+
+					</div>
+
+				</div>
+
+				<script src="/Site/web/src/script/area.js"></script>
+		<script>
+			_init_area();
+			ui.loader('ucenter', 'security', function() {
+				var vm = new Vue({
+					el: '#webApp',
+					data: $.extend(vue.data, {
+						bankType: [],
+						bankName: '',
+						bankNote: '',
+						openName: '',
+						idCard: '',
+						accounts: '',
+						submitTxt: '确定'
+					}),
+					methods: $.extend(vue.methods, {
+//						_smsCode: function() {
+//							var captcha = $.trim(this.captcha.value);
+//							if(captcha == '')
+//								layer.alert('请输入验证码');
+//							else {
+//								var url = this.interfaceUrl+app.config.sendSms.url+'?phone='+this.username+'&captcha='+captcha+'&type=1';
+//								this.getSmsCode(url, function(data) {
+//									if (data == -1)
+//										layer.alert('手机号不存在');
+//									else if (data == 0) 
+//										layer.alert('验证码不正确');
+//								});
+//							}
+//						},
+						submit: function() {
+							var bankName = this.bankName;
+							var province = $('#s_province').val();
+							var city = $('#s_city').val();
+							var bankNote = $.trim(this.bankNote);
+							var openName = $.trim(this.openName);
+							var idCard = $.trim(this.idCard);
+							var accounts = $.trim(this.accounts);
+							var captcha = $.trim(this.captcha.value);
+							var smsCode = $.trim(this.smsCode.value);
+							if (bankName == '')
+								layer.alert('请选择开户银行');
+						   	else if (province == '省份')
+						    	layer.alert('请选择开户地区-省份');
+						    else if (city == '地级市')
+						    	layer.alert('请选择开户地区-地级市');
+						    else if (bankNote == '')
+						    	layer.alert('请输入支行名称');
+						    else if (openName == '')
+						    	layer.alert('请输入开户人姓名');
+						    else if (!app.regExp.trueName.test(openName))
+						    	layer.alert('开户人姓名必须是真实姓名，2-4个汉字')
+						    else if (idCard == '')
+						    	layer.alert('请输入身份证号码');
+						    else if (!app.regExp.idCard.test(idCard))
+						    	layer.alert('请输入正确的身份证号')
+						    else if (accounts == '')
+						    	layer.alert('请输入储蓄卡卡号');
+						    else if (!(accounts.length == 16 || accounts.length == 19))
+						    	layer.alert('储蓄卡卡号须为16位或19位');
+							else if(smsCode == '')
+								layer.alert('请输入登录密码');
+							else if(captcha == '')
+								layer.alert('请输入验证码');
+							else if(this.submitTxt != '提交中...') {
+								var _url = vm.interfaceUrl + '/interface/saveBank';
+								var _data = 'token='+vm.usertoken+'&userId='+vm.userid+'&phone='+vm.username
+									+'&phoneCode='+smsCode+'&name='+openName+'&idCard='+idCard+'&bankName='+bankName
+									+'&accounts='+accounts+'&bankNote='+province+'$$'+city+'$$'+bankNote+'&captcha='+captcha;
+//								console.log(_url);
+//								console.log(_data);
+								this.ajaxSubmit({
+									before: function() {vm.submitTxt = '提交中...';}, 
+									url: _url,
+									data: _data,
+									success: function(data) {
+										if (data.code == 0) {
+											layer.open({
+												title: '提示',
+												content: vm.userinfo.isBindBank == 0 ? '绑定银行卡成功':'修改银行卡成功',
+												end: function() {
+													window.location.href = vm.siteUrl+'/ucenter/security/bindBank.html';
+												}
+											});
+										}
+									},
+									error: function(ext) {},
+									complete: function() {vm.submitTxt = '确定';}
+								});
+							}
+						}
+					}),
+					ready: function() {
+						this.getUserInfo(function(_this) {
+							_this.bankType = app.config.bankType;
+							if (_this.userinfo.isBindBank == 0) 
+								_this.bankName = app.config.bankType[0].value;
+							else {
+								var url = _this.interfaceUrl+'/interface/bankinfo?token='+_this.usertoken+'&userId='+_this.userid;
+								_this.$http.get(url).then(function(response) {
+									var cashAccount = response.body.cashaccount;
+									var bankNote = cashAccount.bankNote.split('$$');
+									change(0);
+									$('#s_province').val(bankNote[0]);
+									change(1);
+									$('#s_city').val(bankNote[1]);
+									_this.bankName = cashAccount.bankName;
+									_this.bankNote = bankNote[2];
+									_this.openName = cashAccount.name;
+									_this.idCard = cashAccount.idCard;
+									_this.accounts = cashAccount.accounts;
+								});
+							}
+						})
+						this.getCaptcha();
+					}
+				})
+			});
+		</script>
+
+
+			</div>
+
+		</div>
+	</body>
+
+</html>
+
+

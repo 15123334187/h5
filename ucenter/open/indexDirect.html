@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head>
+		<title>网上开户-源泰金控-专业期货服务平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/global.css">
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/ui.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/topup.css" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+
+		<div id="g_web" class="g_web ">
+
+			<!--main-->
+
+			<div id="ucenter-wrap">
+
+				<div class="layout_1000">
+					<div class="topup_box">
+						<div id="divBlockTitle" class="block_title">
+							<div class="status_box">
+								<a class="current">网上开户</a>
+							</div>
+						</div>
+						<div id="paytype_1" class="paytype_list_box">
+
+							<div class="Man_body">
+								<br />
+								<style>
+									.input.small {
+										min-width: 130px
+									}
+								</style>
+
+								<br />
+								<dl >
+									<dt>&nbsp;</dt>
+									<dd style="line-height: 22px;">
+										<label style="vertical-align: middle;"> <input style="vertical-align: middle; margin: -2px 4px 0 0;" v-model="agreement" id="license" type="checkbox">我已阅读并同意
+								<a href="agreement/1.pdf" target="_blank" >
+									<span style="color: #E1A038;    line-height: 20px;">《禁止代客理财揭示书》</span>
+								</a>
+								<br />
+								<a href="agreement/2.pdf" target="_blank" >
+									<span style="color: #E1A038;    line-height: 20px;">《期货交易风险揭示书》</span>
+								</a>
+								<a href="agreement/3.pdf" target="_blank" >
+									<span style="color: #E1A038;    line-height: 20px;">《源泰金控期货合作操盘协议》</span>
+								</a>
+							</label>
+									</dd>
+								</dl>
+
+								<br />
+								<div class="submit">
+									<input type="button" id="BtnAdd " @click="submit" class="btn width180" v-model="submitTxt">
+									<input id="hUserCode" type="hidden">
+								</div>
+								<br>
+							</div>
+
+						</div>
+
+						<div class="prompt_box">
+							<dl>
+								<dt>温馨提示： </dt>
+								<dd>
+									<p>1. 一个账号可注册多个交易账户</p>
+									<p>2. 请使用IE浏览器进行开户申请，以避免出现操作失误的情况</p>
+									<p>3. 如有疑问，请拨打<span class="active">400 075 7088</span>进行质询</p>
+									<p>4. 18周岁(含)至70周岁(含)且具有完全民事行为能力的公民均可开户</p>
+									<p>5. 请不要在网吧等公共场所使用网上开户系统</p>
+								</dd>
+							</dl>
+						</div>
+
+					</div>
+
+				</div>
+				<script src="/Site/web/src/script/area.js"></script>
+				<script>
+					ui.loader('ucenter', 'indexDirect', function() {
+						var vm = new Vue({
+							el: '#webApp',
+							data: $.extend(vue.data, {
+								agreement: false,
+								submitTxt: '我要开户',
+							}),
+							methods: $.extend(vue.methods, {
+								submit: function() {
+									var agreement = this.agreement;
+									if(!agreement)
+										layer.alert('请仔细阅读并同意《禁止代客理财揭示书》 《期货交易风险揭示书》 《源泰金控期货合作操盘协议》!');
+									else if(this.submitTxt != '开户中...') {
+										this.ajaxSubmit({
+											before: function() {
+												vm.submitTxt = '开户中...';
+											},
+											url: vm.interfaceUrl + '/interface/openAccount',
+											data: 'token=' + vm.usertoken + '&userId=' + vm.userid,
+											success: function(data) {
+												if(data.code == 0) {
+													layer.open({
+														title: '提示',
+														content: '恭喜您，开户成功！',
+														end: function() {
+															window.location.href = vm.siteUrl + '/ucenter/open/detail.html';
+														}
+													});
+												}
+											},
+											error: function() {},
+											complete: function() {
+												vm.submitTxt = '我要开户';
+											}
+										});
+									}
+								}
+							}),
+							ready: function() {
+								
+							}
+						});
+					});
+				</script>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>

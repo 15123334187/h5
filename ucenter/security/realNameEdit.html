@@ -1,0 +1,139 @@
+
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head>
+		<title>实名认证-源泰金控-专业期货服务平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/global.css">
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/ui.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/topup.css" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+
+		<div id="g_web" class="g_web ">
+
+			<!--main-->
+
+			<div id="ucenter-wrap">
+
+				<div class="layout_1000">
+					<div class="topup_box">
+						<div id="divBlockTitle" class="block_title">
+							<div class="status_box">
+								<a class="current">实名认证</a>
+								<!--<a href="Withdraw.aspx">提现</a>
+								<a href="FundRecord.aspx">资金记录</a>-->
+							</div>
+						</div>
+						<!--<div class="tab_box">
+							<div class="tab1 active">
+								<a class="aCardType" href="javascript:" data-val="1">储 蓄 卡</a>
+							</div>
+
+						</div>-->
+						<div id="paytype_1" class="paytype_list_box">
+
+							<div class="Man_body">
+								<br />
+								<dl>
+									<dt>真实姓名：</dt>
+									<dd>
+										<!--										<input name="FastPaymentAmount1$txtAmount" type="text" id="FastPaymentAmount1_txtAmount" class="input index_te" onBlur="fmoneyOnblur('FastPaymentAmount1_txtAmount',2);" onFocus="fmoneyOnfocus('FastPaymentAmount1_txtAmount',2)" onKeyPress="if (event.keyCode!=46 &amp;&amp; (event.keyCode<48 || event.keyCode>57)) event.returnValue=false">-->
+										<input type="text" class="input index_te"  v-model="trueName" maxlength="4" />
+									</dd>
+								</dl>
+								<br />
+								<dl>
+									<dt>身份证号：</dt>
+									<dd>
+										<!--										<input name="FastPaymentAmount1$txtAmount" type="text" id="FastPaymentAmount1_txtAmount" class="input index_te" onBlur="fmoneyOnblur('FastPaymentAmount1_txtAmount',2);" onFocus="fmoneyOnfocus('FastPaymentAmount1_txtAmount',2)" onKeyPress="if (event.keyCode!=46 &amp;&amp; (event.keyCode<48 || event.keyCode>57)) event.returnValue=false">-->
+										<input type="text" class="input index_te" v-model="idCard" maxlength="18"/>
+									</dd>
+								</dl>
+                                <br />
+								<!--<dl>
+									<dt>实际充值金额：</dt>
+									<dd>
+										<span id="showData" style="color: Red; font-size: 18px;">0.00元</span>
+									</dd>
+									<dd></dd>
+								</dl>-->
+								<div class="submit">
+									<input type="button" id="BtnAdd " @click="submit" class="btn width180" value="确 定">
+									<input id="hUserCode" type="hidden">
+								</div>
+								<br>
+								
+							</div>
+
+						</div>
+
+						
+
+					</div>
+
+				</div>
+
+				<script>
+			ui.loader('ucenter', 'security', function() {
+				var vm = new Vue({
+					el: '#webApp',
+					data: $.extend(vue.data, {
+						trueName: '',
+						idCard: '',
+						submitTxt: '确定'
+					}),
+					methods: $.extend(vue.methods, {
+						submit: function() {
+							var trueName = $.trim(this.trueName);
+							var idCard = $.trim(this.idCard);
+							if (trueName == '')
+								layer.alert('真实姓名不能为空');
+							else if (!app.regExp.trueName.test(trueName))
+								layer.alert('真实姓名只允许输入2-4个汉字');
+							else if (idCard == '')
+								layer.alert('身份证号不能为空');
+							//else if (!app.regExp.idCard.test(idCard))
+							//	layer.alert('请输入正确的身份证号');
+							else if (this.submitTxt !='提交中...') {
+								this.ajaxSubmit({
+									before: function() { vm.submitTxt = '提交中...';},
+									url: vm.interfaceUrl+'/interface/realNameAudit',
+									data: 'token='+vm.usertoken+'&userId='+vm.userid+'&name='+trueName+'&idCard='+idCard,
+									success: function(data) {
+										if (data.code == 0) {
+											layer.open({
+											  title: '提示',
+											  content: '实名认证提交成功，请等待审核结果',
+											  end: function() {window.location.href=vm.siteUrl+'/ucenter/index.html'}
+											});
+										}
+									},
+									error: function() {},
+									complete: function() {vm.submitTxt = '确定';}
+								});
+							}
+						}
+					}),
+					ready: function() {}
+				});
+			});
+		</script>
+			</div>
+
+		</div>
+	</body>
+
+</html>
+
+

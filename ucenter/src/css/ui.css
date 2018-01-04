@@ -1,0 +1,487 @@
+﻿.width300 {
+    padding-left: 20px;
+    width: 280px;
+}
+
+.width280 {
+    padding-left: 20px;
+    width: 260px;
+}
+
+.width240 {
+    padding-left: 20px;
+    width: 220px;
+}
+
+.width210 {
+    padding-left: 20px;
+    width: 190px;
+}
+
+.width200 {
+    padding-left: 20px;
+    width: 180px;
+}
+
+.width170 {
+    padding-left: 20px;
+    width: 150px;
+}
+
+.width180 {
+    /*padding-left: 20px;*/
+    width: 172px;
+}
+
+.width110 {
+    padding-left: 20px;
+    width: 90px;
+}
+
+.input {
+	min-width: 270px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #e4e5e7;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+    .input:focus {
+        /*当表单组中组件获得焦点的时候，执行动画*/
+        outline: none;
+        -webkit-animation: glow 800ms ease-out infinite alternate;
+        -moz-animation: glow 800ms ease-out infinite alternate;
+        -o-animation: glow 800ms ease-out infinite alternate;
+        -ms-animation: glow 800ms ease-out infinite alternate;
+        animation: glow 800ms ease-out infinite alternate;
+    }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #999;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #999;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #999;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #999;
+}
+
+
+.valide_tip {
+    color: red;
+    font-size: 12px;
+    font-family: 宋体,SimSun;
+    padding: 0 12px;
+}
+
+.btn_group {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btnSub {
+    color: #fff;
+    background-color: #70b2d4;
+    border: none;
+    height: 30px;
+    width: 300px;
+}
+
+.btn {
+    color: #fff;
+    background-color: #bf191d;
+    border: none;
+    height: 34px;
+}
+
+/* 定义动画帧 开始 */
+@-webkit-keyframes glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }
+
+    100% {
+        border-color: #66FFFF;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+
+@-moz-keyframes glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }
+
+    100% {
+        border-color: #66f2ff;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+
+@-o-keyframes glow {
+    0%;
+
+{
+    border-color: #cccccc;
+    box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+}
+
+100% {
+    border-color: #66f2ff;
+    box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+}
+
+}
+
+@-ms-keyframes glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }
+
+    100% {
+        border-color: #66f2ff;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+
+@keyframes glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }
+
+    100% {
+        border-color: #66f2ff;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+/* 定义动画帧 结束 */
+
+/*银行卡*/
+.card_box {
+    width: 355px;
+    height: 175px;
+    border: 2px solid #5497b8;
+    text-align: center;
+    color: #333;
+}
+
+    .card_box:hover {
+        border: 2px solid #bf191d;
+    }
+
+.card_area {
+    height: 60px;
+    line-height: 60px;
+}
+
+.money {
+    color: #bf191d;
+}
+
+.card_num {
+    font-size: 24px;
+    color: #bf191d;
+    font-family: 宋体,SimSun;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card_btn_group {
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+}
+
+    .card_btn_group .btn {
+        width: 80px;
+        height: 24px;
+        line-height: 24px;
+        color: #fff;
+        background-color: #bf191d;
+        cursor: pointer;
+    }
+
+    .card_btn_group .del {
+        background-color: #3977b4;
+    }
+
+
+/*弹出层*/
+div.mask_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #202227;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    z-index: 10001;
+    font-family: 微软雅黑, Microsoft YaHei;
+}
+
+.dialog_box {
+    position: fixed;
+    z-index: 10002;
+    left: 50%;
+    top: 50%;
+}
+
+    .dialog_box table {
+        width: 100%;
+        height: 100%;
+    }
+
+        .dialog_box table tr td.border1_1,
+        .dialog_box table tr td.border3_1,
+        .dialog_box table tr td.border1_3,
+        .dialog_box table tr td.border3_3 {
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+
+        .dialog_box table tr td.border1_2,
+        .dialog_box table tr td.border3_2 {
+            height: 5px;
+            background-color: #fff;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+
+        .dialog_box table tr td.border2_1,
+        .dialog_box table tr td.border2_3 {
+            width: 5px;
+            background-color: #fff;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+
+        .dialog_box table tr td.content {
+            background-color: #fff;
+            vertical-align: top;
+            *+width:600px;
+            *+height:390px;
+            overflow: hidden;
+        }
+
+    .dialog_box div.dialog_title_box {
+        height: 60px;
+        width: 100%;
+        background-color: #bf191d;
+        position: relative;
+    }
+
+        .dialog_box div.dialog_title_box h4 {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 60px;
+            padding-left: 60px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .dialog_box div.dialog_title_box div.close {
+            width: 22px;
+            height: 23px;
+            position: absolute;
+            top: 19px;
+            right: 16px;
+            cursor: pointer;
+        }
+
+.content_box dl {
+    margin-left: 80px;
+    text-align: left;
+}
+
+    .content_box dl dt {
+        color: #464646;
+        font-size: 16px;
+    }
+
+    .content_box dl dt,
+    .content_box dl dd {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+.content_box input.txt {
+    width: 420px;
+    padding-left: 20px;
+    border: 1px solid #d0d6d9;
+    height: 43px;
+    line-height: 43px;
+}
+
+.norecord {
+    width: 400px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 微软雅黑, Microsoft YaHei;
+    color: #999;
+    margin: 0 auto;
+}
+
+/*成功页面样式*/
+.success_box {
+    width: 575px;
+    height: 270px;
+    margin: 30px auto 0;
+    font-family: 微软雅黑;
+}
+
+.success_header {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    border-bottom: 1px solid #a0a0a0;
+    line-height: 100px;
+}
+
+    .success_header img {
+        vertical-align: middle;
+    }
+
+    .success_header span {
+        font-size: 24px;
+        color: #454545;
+    }
+
+.success_body {
+    font-size: 16px;
+    color: #565656;
+    width: 480px;
+    text-align: center;
+    margin: 30px auto 0;
+    line-height: 40px;
+}
+
+    .success_body div.btngroup {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+        .success_body div.btngroup a {
+            color: #fff;
+            display: block;
+            width: 210px;
+            height: 40px;
+            font-size: 18px;
+            background-color: #70b2d4;
+            border-radius: 3px;
+        }
+
+/*身份认证*/
+.certification_info {
+    margin-top: 35px;
+    font-family: 微软雅黑;
+}
+
+    .certification_info dl dt {
+        color: #464646;
+        font-size: 16px;
+        font-weight: lighter;
+    }
+
+    .certification_info input.input_txt {
+        height: 45px;
+        line-height: 45px;
+        width: 420px;
+        padding-left: 20px;
+        border: 1px solid #d0d6d9;
+        font-size: 14px;
+        color: #666666;
+    }
+
+    .certification_info div.btngroup {
+        margin-left: 80px;
+        text-align: center;
+        width: 440px;
+    }
+
+        .certification_info div.btngroup input#btnAuth {
+            background-color: #bf191d;
+            width: 300px;
+            height: 45px;
+            border: none;
+            color: #fff;
+            font-family: 微软雅黑;
+            font-size: 18px;
+        }
+
+
+.select_box {
+    border: 1px solid #e4e5e7;
+    height: 34px;
+    line-height: 34px;
+    width: 298px;
+    position: absolute;
+    left: 15px;
+    top: 2px;
+}
+
+    .select_box .select_flag {
+        position: absolute;
+        right: -1px;
+        top: -1px;
+        background: url(/images/uc/bg_select.png) center center;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+    }
+
+    .select_box input.select_input {
+        width: 247px;
+        height: 34px;
+        border: none;
+        outline: none;
+        padding-left: 15px;
+        /*color: #333;*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height:34px;
+        *+height:31px;
+        *+line-height:31px;
+    }
+
+    .select_box div.select_bar {
+        position: absolute;
+        left: -1px;
+        top: 35px;
+        width: 298px;
+        border: 1px solid #e4e5e7;
+        display: none;
+        background-color:#fcfcfc;
+        z-index:999;
+        height:250px;
+        overflow-y:scroll;
+    }
+
+        .select_box div.select_bar span {
+            display: block;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+            .select_box div.select_bar span:hover {
+                color: #fff;
+                background-color: #3977b4;
+            }

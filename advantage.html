@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html id="webApp" lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>新闻资讯-源泰金控-专业期货服务平台</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link type="text/css" href="src/style/base.css" rel="stylesheet" />
+		<!--<link rel="stylesheet" href="css/bootstrap.css">-->
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/financinglist.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/page.css" />
+		<script src="js/touchslide.1.1.js" type="text/javascript"></script>
+		<script src="js/jq.mobi.min.js" type="text/javascript"></script>
+		<!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+		<script type="text/javascript" src="js/pzinputmsg.js"></script>
+		<script type="text/javascript" src="js/navslide.js"></script>
+		<script src="src/script/app.js"></script>
+		<script type="text/javascript" src="js/jquery.superslide.2.1.1.js"></script>
+		<script>
+			$(function() {
+				$('#tcgao').hide();
+			})
+		</script>
+		<script type="text/javascript" src="js/jquery.scrollto.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#ljth_h").click(function() {
+					$.scrollTo('#ljth', 500);
+					$('#ljth').css('padding-top', '85px');
+				});
+				$("#tzln_h").click(function() {
+					$.scrollTo('#tzln', 800);
+					$('#tzln').css('padding-top', '85px');
+				});
+				$("#thyw_h").click(function() {
+					$.scrollTo('#thyw', 1000);
+					$('#thyw').css('padding-top', '85px');
+				});
+				$("#xwdt_h").click(function() {
+					$.scrollTo('#xwdt', 1200);
+				});
+
+			});
+		</script>
+	</head>
+
+	<body style="outline: none;">
+
+		<div id="g_web" class="g_web">
+
+			<div style="width:100%;float:left;" id="tcgao"></div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" v-for="banner in banner.data" :data-image="banner.filePath"></div>
+				</div>
+				<div class="swiper-pagination swiper-pagination-white" v-show="banner.pagination"></div>
+				<div class="swiper-button-next swiper-button-white" v-show="banner.next"></div>
+				<div class="swiper-button-prev swiper-button-white" v-show="banner.prev"></div>
+			</div>
+
+			<script>
+				$('#left14').addClass('hover');
+				$('#left214').addClass('hover');
+			</script>
+			<div class="pz_main" style="background-color:#f6f6f6;">
+
+				<style>
+					body {
+						background: #f5f5f5;
+					}
+					
+					header {
+						display: none;
+					}
+					
+					.bgimg {
+						position: relative;
+					}
+					
+					.goback {
+						position: absolute;
+						z-index: 100;
+						right: 125px;
+						top: 50px;
+					}
+					
+					.bg-wrap {
+						margin-top: 50px;
+						width: 1200px;
+					}
+					
+					.bg-wrap ul {
+						width: 1200px;
+					}
+					
+					.bg-wrap ul li {
+						width: 1200px;
+						height: 100px;
+						line-height: 100px;
+						background: #fff;
+						margin-bottom: 22px;
+					}
+					
+					.bg-wrap ul li:hover {
+						background: #d3dce2;
+						color: #fff;
+					}
+					
+					.bg-wrap ul li:hover img {
+						background: url(/asset/front/xinwen/gg2.png)
+					}
+					
+					.bg-wrap ul li img {
+						float: left;
+						margin: 40px 24px 0 24px;
+					}
+					
+					.bg-wrap ul li p {
+						float: left;
+						width: 790px;
+						margin-left: 24px;
+						font-size: 16px;
+						color: #333333;
+					}
+					
+					.bg-wrap ul li:hover p {
+						color: #fff;
+					}
+					
+					.bg-wrap ul li span {
+						float: left;
+						width: 200px;
+					}
+					
+					.bg-wrap ul li a {
+						float: right;
+						width: 100px;
+						height: 35px;
+						line-height: 35px;
+						color: #fff;
+						background: #d3dce2;
+						text-align: center;
+						border-radius: 5px;
+						margin: 32px 24px 0 0;
+					}
+					
+					.bg-wrap ul li:hover a {
+						border: 1px solid #fff;
+					}
+					
+					div.scott {
+						text-align: center;
+					}
+				</style>
+
+				<div class="bg-wrap article-list new_1200">
+					<ul>
+						<li v-for="list in dataList">
+							<p v-text="list.title"></p>
+							<span v-text="list.gmtCreate"></span>
+							<a @click="jumpNews(list.id)">了解详情</a>
+						</li>
+					</ul>
+
+					<div v-if="dataList.length" class="pagelist">
+						<div id="PageContent" class="scott">
+
+							<template v-if="pageList.index == 1">
+								<span class="disabled">&lt;</span>
+							</template>
+							<template v-else>
+								<a href="javascript:" @click="jumpPage(-- pageList.index)">&lt;</a>
+							</template>
+
+							<template v-for="page in pageList.list">
+								<template v-if="page.index == pageList.index">
+									<span class="current">{{page.index}}</span>
+								</template>
+								<template v-else>
+									<a href="javascript:" @click="jumpPage(page.index)">{{page.index}}</a>
+								</template>
+							</template>
+
+							<template v-if="pageList.index == pageList.length">
+								<span class="disabled">&gt;</span>
+							</template>
+							<template v-else>
+								<a href="javascript:" @click="jumpPage(++ pageList.index)">&gt;</a>
+							</template>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		</div>
+
+		<script>
+			ui.loader('news', function() {
+				var newList = [];
+				var vm = new Vue({
+					el: '#webApp',
+					data: $.extend(vue.data, {
+						dataList: [],
+						pageList: {
+							index: app.methods.getUrlArg('page') || 1,
+							length: 1,
+							list: []
+						},
+					}),
+					methods: $.extend(vue.methods, {
+						jumpNews: function(id) {
+							var menuid = app.methods.getUrlArg('menuid');
+							window.location.href = this.siteUrl + '/newsDetail.html?menuid=' + menuid + '&id=' + id;
+						},
+						jumpPage: function(index) {
+							window.location.href += '&page=' + index;
+						},
+					}),
+					ready: function() {
+						var url = this.interfaceUrl + '/advantage/interface/list?page=' + this.pageList.index + '&limit=1';
+						this.loadList(url);
+					}
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

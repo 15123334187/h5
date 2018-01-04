@@ -1,0 +1,151 @@
+
+<!DOCTYPE HTML>
+<html id="webApp">
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>入金</title>
+	<style>
+		* {margin:0;padding:0;}
+html,body {}
+body {font-family:\5FAE\8F6F\96C5\9ED1;}
+li {list-style:none;}
+.box {width:1200px;box-sizing:border-box;margin:0 auto;}
+form {width:300px;float:left;background:#666;border-radius:8px;padding:10px 20px;height:230px;overflow:hidden;}
+.hd ul {padding:0;overflow:hidden;border-radius:4px;background:#ccc;}
+.hd ul li {float:left;width:50%;font-size:14px;line-height:2;color:#fff;text-align:center;cursor:pointer;}
+.hd ul li.on {background:#0096db}
+.hd ul li a {color:#fff;display:block;text-decoration:none;}
+.hd ul li a:hover {}
+form h3 {text-align:center;color:#fff;margin:0;padding:1em 0;border-bottom:1px solid #fff;position:relative;}
+form  table {margin-top:5px;}
+form  table tr td,form  table tr th {color:#fff;padding:3px 8px;vertical-align:top;line-height:22px;font-size:14px;}
+form  table tr td input {width:100%;border:none;height:22px;line-height:22px;border-radius:3px;}
+.w80 {width:70px;}
+form  table tr td span {font-size:12px;float:right;}
+form  table tr td span input[type="radio"] {width:13px;height:13px;vertical-align:middle;}
+form  table tr td input.btn {height:30px;line-height:30px;outline:none;background:#3937b9;color:#fff;border:none;}
+.pay {width:42px;height:20px;display:inline-block;background:#fff;border-radius:3px;}
+.rtype {width:62px;height:20px;display:inline-block;background:#fff;border-radius:3px;}
+.rtype.pzrj {background:#fff url(/theme/default/images/pzrj1.jpg) no-repeat;float:left;margin-left:2px;}
+.rtype.zjzj {background:#fff url(/theme/default/images/zjzj1.jpg) no-repeat;float:left;margin-left:2px;}
+/* ? /theme/default/images/zfb.png*/.pay.zfb {background:#fff url(/theme/default/images/zfb.jpg) no-repeat;float:left;margin-left:2px;}
+.pay.wx {background:#fff url(/theme/default/images/wx.jpg) no-repeat;float:left;margin-left:2px;}
+.pay.yl {background:#fff url(/theme/default/images/yl.jpg) no-repeat;float:left;margin-left:2px;}
+.pay.sq {background:#fff url(/theme/default/images/sq.jpg) no-repeat;float:left;margin-left:2px;}
+.pay.ff {background:#fff url(/theme/default/images/yl.jpg) no-repeat;float:left;margin-left:2px;}
+.pay-active {background:#f00;}
+.pay-active {height:20px;border-radius:3px;border:2px solid red;background:url(/theme/default/images/checked.png) no-repeat 0 -3px;box-sizing:border-box;}
+.rtype-active {background:#f00;}
+.rtype-active {height:20px;border-radius:3px;border:2px solid red;background:url(/theme/default/images/checked.png) no-repeat 0 -3px;box-sizing:border-box;}
+.tishibox {width:600px;float:left;width:390px;}
+.mar40 {margin:0 40px;}
+.tishi-top {padding:20px;height:210px;overflow:hidden;border-radius:8px;background:#666;text-align:center;}
+.tishi-top h3 {color:#fff;line-height:2;font-size:16px;margin-bottom:15px;font-weight:normal;}
+.tishi-top a {text-decoration:none;color:#fff;padding:8px 45px;background:#3937b9;display:inline-block;}
+.tishi-bot {padding:5px 20px;height:240px;overflow:hidden;border-radius:8px;background:#666;/*text-align:center;*/}
+.tishi-bot h3 {color:#fff;font-weight:normal;text-align:left;/*line-height:30px;background:url(/theme/default/images/lg.png) no-repeat;*/background-size:28px;}
+.tishi-bot p {font-size:12px;line-height:1.5;color:#fff;}
+.tishi-bot span {text-decoration:none;color:#fff;font-size:14px;padding:0px 15px;background:#3937b9;display:inline-block;border-radius:4px;margin:1px 0;}
+/* .letter-sp {letter-spacing:5px;}
+*/
+	</style>
+</head>
+<body>
+<div class="box">
+    <form >
+		<table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+			<tr>
+				<td width="80" align="right">入金账户</td>
+				<td><input type="text" class="textInput" size="40" id="account" autocomplete="off" readonly=""/></td>
+			</tr>
+			<!--<tr>
+				<td width="80" align="right">入金密码</td>
+				<td>
+					<input type="password" class="textInput" size="40" id="pwd" autocomplete="off"/>
+				</td>
+			</tr>-->
+			<tr>
+				<td width="80" align="right">选择银行</td>
+				<td>
+					<select id="bankCode" style="width: 100%; height: 22px;">
+						<option value="BOC">中国银行</option><option value="CEB">光大银行</option><option value="ICBC">工商银行</option><option value="ABC">农业银行</option><option value="CCB">建设银行</option><option value="CMBCHINA">招商银行</option><option value="ECITIC">中信银行</option><option value="PINGAN">平安银行</option><option value="BCCB">北京银行</option><option value="CGB">广发银行</option><option value="POST">邮政储蓄银行</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td width="80" align="right">入金金额</td>
+				<td>
+					<input type="text" class="textInput" size="40" id="money"/>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input onclick="Submit()" style="width: 40%;" type="button" name="submit" class="btn" value="入金" /> <input  style="width: 40%; background: gray;"  type="button" name="submit" class="btn" value="取消" onClick="goback()" />
+				</td>
+			</tr>
+		</table>
+    </form>
+    <div class="tishibox mar40">
+        <div class="tishi-top">
+            <h3>第三方出金</h3>
+            <a id="withdraw">  出 金 </a>
+        </div>
+    </div>
+    <div class="tishibox">
+        <div class="tishi-bot">
+            <span>了解入金</span>
+            <p>1. 入金所产生的所有手续费都由胜捷通平台承担</p>
+			<p>2. 网上银行入金无需本人银行卡</p>
+			<p>3. 每日的入金限额依据各银行限额为准</p>
+			<p>4. 入金时间为周一至周五 全天</p>
+			<p>&nbsp;</p>	
+            <span>了解出金</span>
+            <p>1. 出金完全免费(零交易账户出金千分之五手续费，最低5元)</p>
+			<p>2. 一个帐号只能绑定一张银行卡</p>
+			<p>3. 每日的出金限额依据各银行限额为准</p>
+			<p>4. 出金时间为周一至周五 9:00-17:00</p>
+        </div>
+    </div>
+</div>
+
+<script src="../src/script/jquery.min.js"></script>
+<script>
+function Submit() {
+	var account = $.trim($('#account').val());
+//	var pwd = $.trim($('#pwd').val());
+	var money = $.trim($('#money').val());
+	if (account == '')
+		alert('入金账户不能为空');
+//	else if (pwd == '')
+//		alert('入金密码不能为空');
+	else if (money == '')
+		alert('入金金额不能为空');
+	else if (! /(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/.test(money))	
+		alert('入金金额输入有误');
+	else  if (money<100)	
+		alert('入金100元人民币起');
+	else  {
+		var _url = '/futures-security/site/interface/xinDeposit?';
+//		var _data = 'account='+account+'&pwd='+pwd+'&bankCode='+$('#bankCode').val()+'&money='+money+'&gateway=1';
+		var _data = 'account='+account+'&bankCode='+$('#bankCode').val()+'&money='+money+'&gateway=1';
+		window.location.href = _url + _data;
+	}
+}
+function getUrlArg(name) {
+	var reg = new RegExp("(^|&)"+name+"=([^&]*)(&|$)", "i"); 
+	var r = window.location.search.substr(1).match(reg); 
+	if (r != null) 
+		return unescape(r[2]); 
+	return null;
+}
+function goback() {
+	window.location.href = '/Site/web/xinpay/index.html?account=' + getUrlArg('account');
+}
+$('#account').val(getUrlArg('account'));
+$('#withdraw').attr('href', '/Site/web/xinpay/withdraw.html?account=' + getUrlArg('account'));
+</script>
+</body>
+</html>

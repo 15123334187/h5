@@ -1,0 +1,154 @@
+
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head>
+		<title>银行卡信息-源泰金控-专业期货服务平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/global.css">
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/ui.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/topup.css" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+
+		<div id="g_web" class="g_web ">
+
+			<!--main-->
+
+			<div id="ucenter-wrap">
+
+				<div class="layout_1000">
+					<div class="topup_box">
+						<div id="divBlockTitle" class="block_title">
+							<div class="status_box">
+								
+                                <a class="current">银行卡信息</a>
+
+                                
+								<!--<a href="Withdraw.aspx">提现</a>
+								<a href="FundRecord.aspx">资金记录</a>-->
+							</div>
+						</div>
+						<!--<div class="tab_box">
+							<div class="tab1 active">
+								<a class="aCardType" href="javascript:" data-val="1">储 蓄 卡</a>
+							</div>
+
+						</div>-->
+						<div id="paytype_1" class="paytype_list_box">
+
+							
+							<div class="Man_body">
+								<br />
+								<dl>
+									<dt>开户银行：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="bankName" readonly />
+                                     </dd>
+								</dl>
+								<br />
+								<dl>
+									<dt>开户支行：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="bankNote" readonly />
+                                     </dd>
+								</dl>
+                                <br />
+								<dl>
+									<dt>开户人姓名：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="openName" readonly />
+                                     </dd>
+								</dl>
+                                <br />
+								<dl>
+									<dt>身份证号码：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="idCard" readonly />
+                                     </dd>
+								</dl>
+                                <br />
+								<dl>
+									<dt>储蓄卡卡号：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="accounts" readonly />
+                                     </dd>
+								</dl>
+                                <br />
+								<dl>
+									<dt>用户名：</dt>
+									<dd>
+										<input class="input index_te" type="text" v-model="username" readonly />
+                                     </dd>
+								</dl>
+                                 <br />
+								<!--<dl>
+									<dt>实际充值金额：</dt>
+									<dd>
+										<span id="showData" style="color: Red; font-size: 18px;">0.00元</span>
+									</dd>
+									<dd></dd>
+								</dl>-->
+								<div class="submit">
+									<input type="button" id="BtnAdd " onclick="window.location.href='{{siteUrl}}/ucenter/index.html'" class="btn width180" value="确定">
+									<input id="hUserCode" type="hidden">
+								</div>
+								<br>
+								
+							</div>
+
+						</div>
+
+						
+
+					</div>
+
+				</div>
+
+				<script>
+			ui.loader('ucenter', 'security', function() {
+				var vm = new Vue({
+					el: '#webApp',
+					data: $.extend(vue.data, {
+						bankName: '',
+						bankNote: '',
+						openName: '',
+						idCard: '',
+						accounts: '',
+						submitTxt: '确定'
+					}),
+					methods: $.extend(vue.methods, {}),
+					ready: function() {
+						var url = this.interfaceUrl+'/interface/bankinfo?token='+this.usertoken+'&userId='+this.userid;
+						this.$http.get(url).then(function(response) {
+							var cashAccount = response.body.cashaccount;
+							this.bankName = cashAccount.bankName;
+							this.bankNote = cashAccount.bankNote.split('$$').join('');
+							this.openName = cashAccount.name;
+							this.idCard = cashAccount.idCard;
+							this.accounts = cashAccount.accounts;
+						});
+					}
+				})
+			});
+		</script>
+
+
+
+			</div>
+
+		</div>
+	</body>
+
+</html>
+
+

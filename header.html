@@ -1,0 +1,64 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+	.c_menu,
+	.c_menu a {
+		color: #ccc;
+		font-size: 14px;
+	}
+	
+	.c_menu {
+		float: left;
+		margin: 32px 0 0 20px;
+	}
+	
+	.c_menu>a {
+		margin-right: 5px;
+	}
+</style>
+<div class="pz_top" id="headerNav">
+	<div class="w_1200">
+		<div class="c_1200_1">
+			<div style="margin-top: 20px;" class="logo">
+				<a href="{{siteUrl}}/index.html"><img src="/Site/web/picture/logo.png"></a>
+			</div>
+			<div class="c_menu">
+				<template v-if="!isLogin">
+					<a href="{{siteUrl}}/login.html">登录</a>
+					<a href="{{siteUrl}}/register.html">注册</a>
+				</template>
+				<template v-else>
+					您好，
+					<a href="{{siteUrl}}/ucenter/index.html">{{username}}</a>
+					<a href="javascript:" @click="loginOut">[退出]</a>
+				</template>
+			</div>
+			<div class="r_menu">
+				<div class="menu" id="navSlide">
+					<ul id="headerMenu">
+						<template v-for="menu in menuList">
+							<li class="nli nli_1 menus" id="{{menu.id}}" data-nav="{{siteUrl}}{{menu.navigation}}" > <span> 
+									<a class="l1_a " href="{{siteUrl}}{{menu.navigation}}?menuid={{menu.id}}">
+              							<!--<div class="limg"><img src="picture/top_img64575469.png" width="19" height="19"></div>-->
+              							<div class="chi">{{menu.name}}</div>
+              						</a> </span></li>
+						</template>
+					</ul>
+					</li>
+					<li class="nli nli_2" id="login_in"> <span>
+            <!--<script src="js/zhuangtai.js"></script>-->
+            </span></li>
+					</ul>
+					<!--<script>
+						$('#denglu').click(function() {
+							$('.pf_load').show();
+						})
+					</script>-->
+				</div>
+				<div class="small_menu">
+					<a href="javascript:;" onClick="$('.menu,.cha').show(200);"><img src="picture/top_img4.jpg" width="48" height="46"></a>
+					<a class="cha" href="javascript:;" onClick="$('.menu,.cha').hide(200);"><img src="picture/top_img5.jpg" width="48" height="46"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

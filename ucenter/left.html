@@ -1,0 +1,218 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<div class="uc-nav">
+	<h1>个人中心</h1>
+	<ul>
+		<li>
+			<span>我的账户</span>
+			<ul>
+				<li><a href="{{siteUrl}}/ucenter/index.html" data-nav="index">我的主页</a></li>
+				<li><a href="{{siteUrl}}/ucenter/security/index.html" data-nav="security">安全中心</a></li>
+			</ul>
+		</li>
+		<li>
+			<span>我的资金</span>
+			<ul>
+				<li><a href="javascript:" @click="rechargeJump" data-nav="recharge">入金</a></li>
+				<li><a href="javascript:" @click="withdrawJump" data-nav="withdraw">出金</a></li>
+				<li><a href="{{siteUrl}}/ucenter/recharge/record.html" data-nav="recharge-record">入金记录</a></li>
+				<li><a href="{{siteUrl}}/ucenter/withdraw/record.html" data-nav="withdraw-record">出金记录</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>-->
+<div class="top_banner">
+</div>
+
+<!--main-->
+<div class="layout_1000">
+
+	<div class="user_infotop_box">
+		<div class="user_photo_box">
+			<img id="UserCenterMenu1_imgHeadPortrait" src="http://www.sohodai.cn/images/common/nopic.png" style="height:150px;width:150px;" />
+		</div>
+		<div class="user_name_box">
+			<span class="font24 bold" v-text="username"></span>， <span class="font18">
+                您好！</span>
+
+		</div>
+		<div class="menu_box">
+			<ul id="ul_menu_box">
+				<li>
+					<a class="actived" href="{{siteUrl}}/ucenter/index.html">
+						<span>个人中心</span> </a>
+				</li>
+				<li>
+					<a href="javascript:;"><span>安全管理</span> <i></i></a>
+					<div style="display: none" class="child_menu">
+						<!--<a href="{{siteUrl}}/ucenter/security/updatePhone.html">手机号修改</a>-->
+						<a href="{{siteUrl}}/ucenter/security/updatePwd.html">登录密码修改</a>
+						<template v-if="userinfo.realState == 0">
+							<a href="{{siteUrl}}/ucenter/security/realNameEdit.html">银行卡绑定</a>
+						</template>
+						<template v-else>
+							<template v-if="userinfo.isBindBank == 0">
+								<a href="{{siteUrl}}/ucenter/security/bindBankEdit.html">银行卡绑定</a>
+							</template>
+							<template v-else="">
+								<a href="{{siteUrl}}/ucenter/security/bindBank.html">银行卡信息</a>
+							</template>
+						</template>
+					</div>
+				</li>
+				<li>
+					<template v-if="userinfo.isOpenAccount == 0">
+						<a v-if="userinfo.realState == 0" href="{{siteUrl}}/ucenter/security/realNameEdit.html">立即开户</a>
+						<template v-else="">
+							<template v-if="userinfo.agentId == 0">
+							<a v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行开户操作！')">立即开户</a>
+							<a v-else="" href="{{siteUrl}}/ucenter/open/index.html">立即开户</a>
+							</template>
+							<templet v-else="">
+							<a v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行开户操作！')">立即开户</a>
+							<a v-else="" href="{{siteUrl}}/ucenter/open/indexDirect.html">立即开户</a>
+							</template>
+						</template>
+					</template>
+					<template v-else="">
+						<a href="{{siteUrl}}/ucenter/open/detail.html">开户信息</a>
+					</template>
+				</li>
+				<li>
+					<a href="javascript:;"><span>出入金</span><i></i></a>
+					<div style="display: none" class="child_menu">
+						<a href="{{siteUrl}}/ucenter/depositRecord.html">历史记录</a>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;"><span>资金信息</span> <i></i></a>
+					<div style="display: none;" class="child_menu">
+						<template v-if="userinfo.realState == 0">
+							<a href="{{siteUrl}}/ucenter/security/realNameEdit.html" >充值</a>
+						</template>
+						<template v-else>
+							<a v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行充值操作！')" >充值</a>
+							<a v-else="" href="{{siteUrl}}/ucenter/recharge/index.html" >充值</a>
+						</template>
+						
+						<template v-if="userinfo.realState == 0">
+							<a href="{{siteUrl}}/ucenter/security/realNameEdit.html" >提现</a>
+						</template>
+						<template v-else>
+							<a v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行提现操作！')" >提现</a>
+							<template v-else="">
+								<a v-if="userinfo.isBindBank == 0" href="{{siteUrl}}/ucenter/security/bindBankEdit.html" >提现</a>
+								<a v-else="" href="{{siteUrl}}/ucenter/withdraw/index.html" >提现</a>
+							</template>
+						</template>
+						<a href="{{siteUrl}}/ucenter/recharge/record.html">充值记录</a>
+						<a href="{{siteUrl}}/ucenter/withdraw/record.html">提现记录</a>
+					</div>
+				</li>
+
+			</ul>
+
+		</div>
+		<div class="user_setting_box">
+			<ul>
+				<li>
+					<template v-if="userinfo.realState == 0">
+						<a href="{{siteUrl}}/ucenter/security/realNameEdit.html">
+							<div class="bg_person-1 ml30 fl">
+							</div>
+							<div class="title block fl ml15">
+								实名认证
+							</div>
+						</a>
+					</template>
+					<template v-else>
+						<template v-if="userinfo.realState == 1" >
+							<a onclick="layer.alert('等待后台实名认证审核结果')" href="javascript:">
+								<div class="bg_person-1 ml30 fl">
+								</div>
+								<div class="title block fl ml15">
+									实名认证
+								</div>
+							</a>
+						</template>
+						<template v-else >
+							<a href="{{siteUrl}}/ucenter/security/realName.html">
+								<div class="bg_person-1 ml30 fl">
+								</div>
+								<div class="title block fl ml15">
+									实名认证
+								</div>
+							</a>
+						</template>
+					</template>
+					
+					
+				</li>
+				<!--<li>
+					<a href="{{siteUrl}}/ucenter/security/updatePhone.html">
+						<div class="bg_phone-1 ml30 fl">
+						</div>
+						<div class="title block fl ml15">
+							手机号修改
+						</div>
+					</a>
+				</li>-->
+				<li>
+					<template v-if="userinfo.realState == 0">
+						<a href="{{siteUrl}}/ucenter/security/realNameEdit.html">
+							<div class="bg_person-1 ml30 fl">
+							</div>
+							<div class="title block fl ml15">
+								银行卡绑定
+							</div>
+						</a>
+					</template>
+					<template v-else>
+						<template v-if="userinfo.isBindBank == 0">
+							<a href="{{siteUrl}}/ucenter/security/bindBankEdit.html">
+								<div class="bg_card-1 ml30 fl">
+								</div>
+								<div class="title block fl ml15">
+									银行卡绑定
+								</div>
+							</a>
+						</template>
+						<template v-else="">
+							<a href="{{siteUrl}}/ucenter/security/bindBank.html">
+								<div class="bg_card-1 ml30 fl">
+								</div>
+								<div class="title block fl ml15">
+									银行卡信息
+								</div>
+							</a>
+						</template>
+					</template>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	var liLen = document.getElementById("ul_menu_box").getElementsByTagName("li").length;
+	if(liLen == 6) {
+		for(i = 0; i < liLen; i++) {
+			document.getElementById("ul_menu_box").getElementsByTagName("li")[i].style.width = "133.2px";
+		}
+	}
+	$(function() {
+		$('.user_setting_box ul li').each(function() {
+			$(this).find('a').hover(function() {
+					$(this).find('div').eq(0).attr('class', $(this).find('div').eq(0).attr('class').replace('-1', '-2'));
+				},
+				function() {
+					$(this).find('div').eq(0).attr('class', $(this).find('div').eq(0).attr('class').replace('-2', '-1'));
+				});
+		});
+		$(".menu_box ul li").hover(function() {
+			$(this).children(".child_menu").show();
+		}, function() {
+			$(this).children(".child_menu").hide();
+		});
+	});
+</script>

@@ -1,0 +1,8 @@
+@charset "utf-8";
+.download-center{ padding: 80px 0; text-align: center;}
+.download-center h1{ margin-bottom: 30px; font-size: 24px;}
+.download-center a, .download-center a > img { display: inline-block; vertical-align: top;}
+.download-center a{ width: 280px; height: 80px; margin: 20px 80px; line-height: 80px; font-size: 16px; text-align: center; color: #0270cf; border:1px solid #0270cf; border-radius: 5px;}
+.download-center a > img { height: 40px; margin: 20px 10px 0 0;}
+/*.download-center a.ios-ico{ background:url(../images/download/ios.png) 60px center no-repeat;}
+.download-center a.android-ico{ text-indent: 40px; background:url(../images/download/android.png) 60px center no-repeat;}*/

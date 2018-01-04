@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head>
+		<title>出金记录-胜捷通</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link type="text/css" href="/Site/web/src/style/ucenter.css" rel="stylesheet" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+		<div id="g_main" class='g_main g_col2 '>
+			<div id="g_web" class="g_web ">
+				<script></script>
+				<div id="ucenter-wrap" class="uc-wrap md clearfix">
+					<script></script>
+					<div class="uc-container uc-record">
+						<h1 class="title">出金记录</h1>
+						<!--<h2>累计入金：1.00 USD</h2>-->
+						<table id="dataTable" class="uc-table">
+							<thead>
+								<tr>
+									<th>订单号</th>	
+									<th>申请出金时间</th>
+									<th width="100">出金金额（USD)</th>
+									<th width="100">到账资金（RMB)</th>
+									<th width="120">到账银行</th>
+									<th width="120">状态</th>
+									<th width="120">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<template v-for="list in dataList">
+									<tr>
+										<td>{{list.slipNumber}}</td>
+										<td>{{list.gmtCreate}}</td>
+										<td>{{list.amountRmb}}</td>
+										<td>{{list.amountUsd}}</td>
+										<td>{{list.bankName}}</td>
+										<td>
+											<span v-if="list.status == 1" class="default">正在处理</span>
+											<span v-if="list.status == 2" class="success">审核成功</span>
+											<span v-if="list.status == 3" class="error">出金成功</span>
+											<span v-if="list.status == 4" class="error">审核失败</span>
+										</td>
+										<td class="detail-container">
+											<a href="javascript:" class="buttons">出金详情</a>
+											<div class="detail-box">
+												<h1>出金订单号:{{list.slipNumber}}</h1>
+												<p class="title">订单详情</p>
+												<p>{{list.gmtCreate}}<span>1.提交出金申请</span></p>
+												<p v-if="list.status == 2">{{list.auditTime}}<span>2.审核成功</span></p>
+												<p v-if="list.status == 4">{{list.auditTime}}<span>2.审核失败<br />失败理由：{{list.reason}}</span></p>
+												<template v-if="list.status == 3">
+													<p>{{list.auditTime}}<span>2.审核成功</span></p>
+													<p>{{list.finishTime}}<span>3.出金成功</span></p>
+												</template>
+											</div>
+										</td>
+									</tr>
+								</template>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<link type="text/css" href="/Site/web/src/libs/dataTables/style/dataTables.css" rel="stylesheet" />
+		<script src="/Site/web/src/libs/dataTables/script/jquery.dataTables.js"></script>
+		<script src="/Site/web/src/libs/dataTables/script/dataTables.bootstrap.js"></script>
+		<script src="/Site/web/src/script/dataTables.js"></script>
+		<script>
+			ui.loader('ucenter', 'withdraw-record', function() {
+				var vm = new Vue({
+					el: '#webApp',
+					data: $.extend(vue.data, {
+						dataList: []
+					}),
+					methods: vue.methods,
+					ready: function() {
+						var url = this.interfaceUrl+'/interface/withdrawLog?&page=1&limit=100&token='+this.usertoken+'&userId='+this.userid;
+						$.ajax({
+							type:"get",
+							url:url,
+							dataType: '',
+							success: function(data) {
+								console.log(data);
+								vm.dataList = eval('('+data+')').page.list;
+								vm.$nextTick(function() {
+									dataTables.details('#dataTable');
+								})
+							}
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

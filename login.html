@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html id="webApp" lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>登录-源泰金控-专业期货服务平台</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link href="css/login/bootstrap.css" rel="stylesheet">
+		<link href="css/login/common.css" rel="stylesheet">
+		<link href="font/iconfont.css" rel="stylesheet">
+		<script src="src/script/app.js"></script>
+	</head>
+
+	<body>
+
+		<div id="g_web" class="g_web ">
+
+			<style>
+				.login {
+					background: url("/Site/web/images/login-bg.jpg");
+					background-repeat: no-repeat;
+					background-size: cover;
+					padding-top: 100px;
+					padding-bottom: 60px;
+				}
+				
+				.login .content {
+					/* height: 600px; */
+					background: #F8F7F3;
+					padding: 25px 0 50px 0;
+				}
+				
+				.login .login-title {
+					color: #E1A038;
+					margin-bottom: 50px;
+					font-size: 40px
+				}
+				
+				.login #btn_login {
+					width: 50%;
+					border-radius: 8px;
+					margin-top: 50px;
+					margin-bottom: 15px;
+					margin-left: 24%;
+					margin-right: 24%;
+					font-size: 20px;
+					height: 50px;
+				}
+				
+				.login a {
+					color: #E1A038;
+				}
+				
+				.login .form-control {
+					height: 50px;
+					border: 0;
+					background: #F4F3F1
+				}
+				
+				.login .iconfont {
+					font-size: 30px;
+					color: #BDBDBD;
+				}
+				
+				.login .input-group-addon {
+					border-color: #EDECE8;
+				}
+				
+				.login .color-span {
+					color: #D9D9D9;
+				}
+				
+				.login .form-group {
+					position: relative;
+				}
+				
+				.login #msg_name {
+					position: absolute;
+					right: 10px;
+					top: 16px;
+					z-index: 20;
+				}
+				
+				.login #s_password {
+					position: absolute;
+					right: 10px;
+					top: 16px;
+					z-index: 20;
+				}
+			</style>
+
+			<div class="login">
+
+				<div class="container">
+					<div class="content col-lg-5 col-lg-offset-7 col-md-6 col-md-offset-6 col-sm-8 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+						<h1 class="login-title text-center">登录</h1>
+
+						<form id="user_login_form" name="user_login_form" action="/index.php?ctl=user&amp;act=do_login">
+
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="iconfont  icon-zhanghao"></span>
+									</div>
+									<input @keydown.enter="login" v-model="uname" maxlength="12"  type="text" class="form-control"  placeholder="请输入您的手机号">
+								</div>
+								<div id="msg_name"></div>
+
+							</div>
+
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="iconfont  icon-mima"></span>
+									</div>
+									<input @keydown.enter="login" v-model="pwd" maxlength="32" type="password" name="password" class="form-control"  placeholder="请输入密码">
+								</div>
+								<div id="s_password"></div>
+
+							</div>
+							
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<span class="iconfont  icon-toubaoshengming"></span>
+									</div>
+									<input style="width: 210px; margin-right: 10px;" @keydown.enter="login" v-model="captcha.value" maxlength="5" type="text" class="form-control"  placeholder="请输入验证码">
+									<a href="javascript:" @click="getCaptcha"><img :src="captcha.url"></a>
+								</div>
+								<div id="msg_name"></div>
+
+							</div>
+
+							<div class="form-group">
+								<div class="col-md-6">
+									<label>
+										<input type="checkbox" v-model="autoLogin" style="height:16px;width:16px;vertical-align:middle;margin:0">
+										<span class="color-span">记住密码</span>
+										<!--<a :href="siteUrl+'/findPwd.html'" class="right">忘记密码</a>-->
+									</label>
+								</div>
+								<div class="col-md-6 text-right">
+									<a :href="siteUrl+'/findPwd.html'" style="font-size:13px;margin-left:10px;">忘记密码？</a>
+								</div>
+							</div>
+
+							<input type="button" @click="login" v-model="loginTxt" class="btn btn-warning" id="btn_login">
+
+							<!--<div class="form-group text-right">
+								<div class="col-xs-12">
+									<span class="f_r" style="font-size:14px;color:#8c8c8c;line-height:14px; margin-top:16px;">
+								<span class="color-span">还没账号？</span>
+									<a href="/ucenter/register.html">立即注册</a>
+									</span>
+								</div>
+							</div>-->
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+	
+	
+	<script>
+		ui.loader('login', function() {
+			var vm = new Vue({
+				el: '#webApp',
+				data: $.extend(vue.data, {
+					error: { show: false, msg: '' },
+					uname: '',
+					pwd: '',
+					autoLogin: false,
+					loginTxt: '登录',
+					autoCheckLogin: false
+				}),
+				methods: $.extend(vue.methods, {
+					_error: function(msg) {
+//						this.error = { show: true, msg: msg};
+						layer.alert(msg);
+					},
+					login: function() {
+						var uname = $.trim(this.uname);
+						var pwd = this.pwd;
+						var captcha = $.trim(this.captcha.value);
+						var autoLogin = this.autoLogin;
+						if (uname == '')
+							this._error('请输入您的手机号');
+//						else if (!app.regExp.phone.test(uname))
+//							this._error('请输入正确的手机号码');
+						else if (pwd == '')
+							this._error('请输入密码');
+						else if (captcha == '')
+							this._error('请输入验证码');
+						else if (this.loginTxt != '登录中...') {
+							this.ajaxSubmit({
+								before: function() { vm.loginTxt = '登录中...';},
+								url: vm.interfaceUrl+'/interface/login',
+								data: "username="+uname+"&password="+pwd+"&captcha="+captcha+"&isRememberMe="+autoLogin,
+								success: function(data) {
+									if (data.code == 0) {
+										vm.setUserTokenCookie(uname, data.userId, data.token, autoLogin);
+										window.location.href = vm.siteUrl+'/ucenter/index.html';
+									} else 
+										vm._error(data.msg);										
+								},
+								error: function() {},
+								complete: function() {vm.loginTxt = '登录';}
+							});
+						}
+					}
+				}),
+				ready: function() {
+					this.getCaptcha();
+					$('.input').on('input propertychange', function() {
+						vm.error = { show: false, msg: '' }
+					});
+				}
+			});
+		});
+	</script>
+
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head>
+		<title>开户信息-源泰金控-专业期货服务平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/global.css">
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/ui.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/topup.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/financinglist.css" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+
+		<div id="g_web" class="g_web ">
+
+			<!--main-->
+
+			<div id="ucenter-wrap">
+
+				<div class="layout_1000">
+					<div class="topup_box">
+						<div id="divBlockTitle" class="block_title">
+							<div class="status_box">
+								<a class="current">开户信息</a>
+								<!--<a href="Withdraw.aspx">提现</a>
+								<a href="FundRecord.aspx">资金记录</a>-->
+							</div>
+						</div>
+						<!--<div class="tab_box">
+							<div class="tab1 active">
+								<a class="aCardType" href="javascript:" data-val="1">储 蓄 卡</a>
+							</div>
+
+						</div>-->
+						<div id="paytype_1" class="paytype_list_box">
+
+							<div class="Man_body">
+
+								<div class="fundrecordlist_bar">
+
+									<table id="dataTable" class="uc-table">
+										<thead>
+											<tr>
+												<th style="width:33%">序号</th>
+												<th style="width:33%">开户账号</th>
+												<th style="width:33%">开户密码</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr v-for="list in userinfo.openAccountList">
+												<td v-text="$index + 1"></td>
+												<td v-text="list.account"></td>
+												<td v-text="list.password"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!--<br />
+								<dl>
+									<dt>开户账号：</dt>
+									<dd>
+										<input type="text" class="input index_te" v-model="userinfo.account" readonly />
+                                    </dd>
+								</dl>
+								<br />
+								<dl>
+									<dt>登录密码：</dt>
+									<dd>
+										<input type="text" class="input index_te" v-model="userinfo.accountPwd" readonly />
+                                    </dd>
+								</dl>-->
+								<!--<dl>
+									<dt>实际充值金额：</dt>
+									<dd>
+										<span id="showData" style="color: Red; font-size: 18px;">0.00元</span>
+									</dd>
+									<dd></dd>
+								</dl>-->
+								<br />
+								<div class="submit">
+									<input type="button" id="BtnAdd " onclick="window.location.href='{{siteUrl}}/ucenter/index.html'" class="btn width180" value="确 认">
+									<input id="hUserCode" type="hidden">
+								</div>
+								<br>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<script>
+					ui.loader('ucenter', 'open', function() {
+						var vm = new Vue({
+							el: '#webApp',
+							data: $.extend(vue.data, {}),
+							methods: $.extend(vue.methods, {}),
+							ready: function() {}
+						});
+					});
+				</script>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>

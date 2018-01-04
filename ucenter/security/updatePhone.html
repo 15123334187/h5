@@ -1,0 +1,186 @@
+
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head>
+		<title>修改手机号-源泰金控-专业期货服务平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/global.css">
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/ui.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/common.css" />
+		<link rel="stylesheet" type="text/css" href="/Site/web/ucenter/src/css/uc/topup.css" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+
+		<div id="g_web" class="g_web ">
+
+			<!--main-->
+
+			<div id="ucenter-wrap">
+
+				<div class="layout_1000">
+					<div class="topup_box">
+						<div id="divBlockTitle" class="block_title">
+							<div class="status_box">
+								<a class="current">手机号修改</a>
+								<!--<a href="Withdraw.aspx">提现</a>
+								<a href="FundRecord.aspx">资金记录</a>-->
+							</div>
+						</div>
+						<!--<div class="tab_box">
+							<div class="tab1 active">
+								<a class="aCardType" href="javascript:" data-val="1">储 蓄 卡</a>
+							</div>
+
+						</div>-->
+						<div id="paytype_1" class="paytype_list_box">
+
+						
+							<div class="Man_body">
+								<br />
+								<dl>
+									<dt>当前手机号：</dt>
+									<dd>
+										<input type="text" class="input index_te"  v-model="username" readonly />
+									</dd>
+								</dl>
+								<br />
+								<dl>
+									<dt>新手机号：</dt>
+									<dd>
+										<input type="text" class="input index_te" v-model="newphone" maxlength="11" />
+									</dd>
+								</dl>
+                                <br />
+                                <dl>
+									<dt>登录密码：</dt>
+									<dd>
+										<input type="password" class="input index_te" v-model="password"  />
+									</dd>
+								</dl>
+                                 <br />
+                                 <dl>
+									<dt>验证码：</dt>
+									<dd>
+										<input style="display:inline-block; vertical-align:top; margin-right:10px" type="text" class="input index_te" v-model="captcha.value" maxlength="5"  /><a style=" display:inline-block; vertical-align:top" href="javascript:" @click="getCaptcha"><img style="height:40px" :src="captcha.url" class="image-code" alt=""></a></li>
+
+									</dd>
+								</dl>
+                                <br />
+                                <dl>
+									<dt>短信验证码：</dt>
+									<dd>
+										<input style="margin-right:10px" type="text" class="input index_te" v-model="smsCode.value" maxlength="6" /> <a class="gray-button" href="javascript:" v-show="smsCode.getShow" @click="_smsCode" v-text="smsCode.getText"></a><span class="gray-button" v-show="smsCode.cdShow"><span v-text="smsCode.cdTime"></span>S重新获取</span>
+									</dd>
+								</dl>
+                                 <br />
+								<!--<dl>
+									<dt>实际充值金额：</dt>
+									<dd>
+										<span id="showData" style="color: Red; font-size: 18px;">0.00元</span>
+									</dd>
+									<dd></dd>
+								</dl>-->
+								<div class="submit">
+									<input type="button" id="BtnAdd " @click="submit" class="btn width180" value="确 定">
+									<input id="hUserCode" type="hidden">
+								</div>
+								<br>
+								
+							</div>
+
+						</div>
+
+						
+
+					</div>
+
+				</div>
+
+				<script>
+			ui.loader('ucenter', 'security', function() {
+				var vm = new Vue({
+					el: '#webApp',
+					data: $.extend(vue.data, {
+						newphone: '',
+						password: '',
+						submitTxt: '确定'
+					}),
+					methods: $.extend(vue.methods, {
+						_smsCode: function() {
+							var captcha = $.trim(this.captcha.value);
+							if(captcha == '')
+								layer.alert('请输入验证码');
+							else {
+								var url = this.interfaceUrl+app.config.sendSms.url+'?phone='+this.username+'&captcha='+captcha+'&type=1';
+								this.getSmsCode(url, function(data) {
+									if (data == -1)
+										layer.alert('手机号不存在');
+									else if (data == 0) 
+										layer.alert('验证码不正确');
+								});
+							}
+						},
+						submit: function() {
+							var newphone = $.trim(this.newphone);
+							var password = this.password;
+							var captcha = $.trim(this.captcha.value);
+							var smsCode = $.trim(this.smsCode.value);
+							if(newphone == '')
+								layer.alert('请输入新手机号');
+							else if(!app.regExp.phone.test(newphone))
+								layer.alert('请输入正确的手机号');
+							else if(newphone == this.username)
+								layer.alert('请输入其他手机号作为新手机号');
+							else if(password == '')
+								layer.alert('请输入登录密码');
+							else if(captcha == '')
+								layer.alert('请输入验证码');
+							else if(smsCode == '')
+								layer.alert('请输入短信验证码');
+							else if(this.submitTxt != '提交中...') {
+								var _data = 'token='+vm.usertoken+'&userId='+vm.userid+'&oldPhone='+vm.username
+									+'&phone='+newphone+'&password='+password+'&phoneCode='+smsCode+'&captcha='+captcha;
+								this.ajaxSubmit({
+									before: function() {vm.submitTxt = '提交中...';}, 
+									url: vm.interfaceUrl + '/interface/updatePhone',
+									data: _data,
+									success: function(data) {
+										if (data.code == 0) {
+											vm.deleteUserCookie();
+											layer.open({
+												title: '提示',
+												content: '修改手机号成功, 请用新手机号重新登录',
+												end: function() {vm.loginJump();}
+											});
+										}
+									},
+									error: function(ext) {},
+									complete: function() {vm.submitTxt = '确定';}
+								});
+							}
+						}
+					}),
+					ready: function() {
+						this.getCaptcha();
+					}
+				})
+			});
+		</script>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>
+
+

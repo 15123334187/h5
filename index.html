@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html id="webApp" lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>首页-源泰金控-专业期货服务平台</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link type="text/css" href="src/style/base.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<script src="js/touchslide.1.1.js" type="text/javascript"></script>
+		<script src="js/jq.mobi.min.js" type="text/javascript"></script>
+		<!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+		<script type="text/javascript" src="js/pzinputmsg.js"></script>
+		<script type="text/javascript" src="js/navslide.js"></script>
+		<script src="src/script/app.js"></script>
+		<script type="text/javascript" src="js/jquery.superslide.2.1.1.js"></script>
+		<script>
+			$(function() {
+				$('#tcgao').hide();
+			})
+		</script>
+		<script type="text/javascript" src="js/jquery.scrollto.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#ljth_h").click(function() {
+					$.scrollTo('#ljth', 500);
+					$('#ljth').css('padding-top', '85px');
+				});
+				$("#tzln_h").click(function() {
+					$.scrollTo('#tzln', 800);
+					$('#tzln').css('padding-top', '85px');
+				});
+				$("#thyw_h").click(function() {
+					$.scrollTo('#thyw', 1000);
+					$('#thyw').css('padding-top', '85px');
+				});
+				$("#xwdt_h").click(function() {
+					$.scrollTo('#xwdt', 1200);
+				});
+
+			});
+		</script>
+	</head>
+
+	<body style="outline: none;">
+
+		<div id="g_web" class="g_web">
+			<div style="width:100%;float:left; height:85px;" id="tcgao"></div>
+			<!--<div class="hieght_85"></div>-->
+			<div style="height: 500px;" class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" v-for="banner in banner.data" :data-image="banner.filePath"></div>
+				</div>
+				<div class="swiper-pagination swiper-pagination-white" v-show="banner.pagination"></div>
+				<div class="swiper-button-next swiper-button-white" v-show="banner.next"></div>
+				<div class="swiper-button-prev swiper-button-white" v-show="banner.prev"></div>
+			</div>
+			<div class="pz_main">
+				<div class="w_0100 c_0100_bg1" id="ljth">
+					<div class="w_1200">
+						<div class="c_1200_2">
+							<div class="title_1">
+								<div class="tit_1">源泰公告</div>
+								<div v-for="news in latestNews" class="text_1">
+									<p><a href="javascript:" @click="jumpUrl(siteUrl+'/news.html', siteUrl+'/newsDetail.html?id='+news.id+'&type=news')" title="{{news.title}}">
+										<span style="color: rgb(51, 51, 51); font-family: &#39;Microsoft YaHei&#39;, Helvetica, Arial, sans-serif; font-size: 13.63636302947998px; line-height: 23.99147605895996px; text-indent: 28px; background-color: rgb(246, 246, 246);">{{news.title}}</span>
+										</a>
+									</p>
+								</div>
+							</div>
+							<div class="t_1200_1">
+								<div class="li_6">
+									<div class="l_41">
+										<a href="about.html" class="bg41_1"></a>
+									</div>
+									<div class="l_140">
+										<div class="t_140_1">
+											<a href="about.html">公司简介</a>
+										</div>
+										<div class="t_140_2">
+											<a href="about.html">Talon tianhe</a>
+										</div>
+									</div>
+									<div class="l_17"></div>
+								</div>
+								<div class="li_6">
+									<div class="l_41">
+										<a href="about.html" class="bg41_2"></a>
+									</div>
+									<div class="l_140">
+										<div class="t_140_1">
+											<a href="about.html">企业文化</a>
+										</div>
+										<div class="t_140_2">
+											<a href="about.html">Vision＆Prospects</a>
+										</div>
+									</div>
+									<div class="l_17"></div>
+								</div>
+								<div id="newsNotice" class="li_6">
+									<div class="l_41">
+										<a href="javascript:" class="bg41_3"></a>
+									</div>
+									<div class="l_140">
+										<div class="t_140_1">
+											<a href="javascript:" >源泰公告</a>
+										</div>
+										<div class="t_140_2">
+											<a href="javascript:" >Latest News</a>
+										</div>
+									</div>
+									<div class="l_17"></div>
+								</div>
+								<div class="li_6">
+									<div class="l_41">
+										<a href="about.html" class="bg41_4"></a>
+									</div>
+									<div class="l_140">
+										<div class="t_140_1">
+											<a href="about.html">联系我们</a>
+										</div>
+										<div class="t_140_2">
+											<a href="about.html">Contact Us</a>
+										</div>
+									</div>
+									<div class="l_17"></div>
+								</div>
+							</div>
+							<script>
+								$('.li_6').hover(function() {
+									$(this).stop().animate({
+										padding: ":0 0 10px 0",
+										margin: "12px 0 0 0"
+									});
+
+								}, function() {
+									$(this).stop().animate({
+										padding: ":0 0 0 0",
+										margin: "22px 0 0 0"
+									});
+								})
+							</script>
+						</div>
+					</div>
+				</div>
+				<!--首页投资理念-->
+				<div class="w_0100" style=" overflow:hidden;" id="tzln">
+					<div class="w_1200">
+						<!--网页投资理财开始-->
+						<div  class="c_1200_3">
+							<div class="l_1237_ln"><img src="picture/main_img7.png" height="658" width="1237" /></div>
+							<div class="r_1222_ln"><img src="picture/main_img7_b.png" height="658" width="1222" /></div>
+							<div class="t_1200">平台简介</div>
+							<div class="t_1200_ln2">
+								<div class="l_410">
+									<div class="t_410_1"><br/>
+									</div>
+									<div class="t_410_3">
+										江西华劭投资管理有限公司总部坐落于英雄城南昌，成立于2015年3月，注册资本金1000万元整，是一家提供投资管理、投资咨询的综合性服务机构。公司秉承南昌诚信图强的城市精神，致力于为客户提供最优质的服务。<br />
+										公司坚持规范自律、诚实信用的经营理念，以持续经营、踏实稳健为宗旨，积极打造专业化期货理财服务。以专业的水平，服务专业的市场，在行业内赢得了良好的口碑。
+									</div>
+								</div>
+								<div class="r_410">
+									<div class="tr_410_1"><br/>
+									</div>
+									<p><br/>
+									</p>
+									<div class="tr_410_3">
+										2017年公司将进一步贯彻合规转型升级的发展战略，坚持"以合规经营为准绳，资管业务为基石，做大平台规模，提升服务品质。"的经营思路。做大业务规模，提升产业客户和机构客户服务能力；扩大子公司业务范围，提高服务实体经济的能力；加大资管业务投顾队伍建设，积极打造以风险管理和财富管理为定位的现代金融集团。
+									</div>
+									<p><br/>
+									</p>
+									<!--<p>
+										<a href="#" target="_self"><img src="picture/6358336364409006214966780.jpg" title="20151117132710.jpg" style="float: right;" /></a>
+									</p>-->
+									<div class="tr_410_4" style="text-align: right;"><br/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(document).ready(
+								function() {
+									$("#lefttp").mouseover(function() {
+										$('.l_1237_ln').addClass('hover');
+										$('.r_1222_ln').removeClass('hover');
+									});
+									$("#righttp").mouseover(function() {
+										$('.r_1222_ln').addClass('hover');
+										$('.l_1237_ln').removeClass('hover');
+									});
+								});
+						</script>
+
+						<!--首页大华业务-->
+						<div class="w_0100 c_0100_bg3" id="thyw">
+							<div class="w_1200">
+								<div class="c_1200_4_other">
+									<div class="title_3">
+										<div class="tit_3">推荐产品</div>
+										<div class="text_3">
+											<!--<div class="l_tit">
+												<p>秉承以&quot;专业、严谨、公平、责任&quot;的经营理念，深得社会的广泛认可和一致好评</p>
+											</div>-->
+											<!--<div class="r_more">
+												<a href="#" class="a_more">了解更多项目&nbsp;&nbsp;<img src="picture/main_img10.png" width="4" height="7"></a>
+											</div>-->
+										</div>
+									</div>
+									<div class="t_1200_3">
+										<ul>
+											<li v-for="business in coreBusiness">
+												<div class="img_379">
+													<a @click="jumpUrl(siteUrl+'/news.html', siteUrl+'/newsDetail.html?id='+business.id+'&type=business')" href="javascript:"><img :src="business.image" width="100%"></a>
+												</div>
+												<div class="d_321">
+													<div class="t_321_1">
+														<a @click="jumpUrl(siteUrl+'/news.html', siteUrl+'/newsDetail.html?id='+business.id+'&type=business')" href="javascript:">
+															<nobr v-text="business.title"></nobr>
+														</a>
+													</div>
+													<div class="t_321_2">
+														<a @click="jumpUrl(siteUrl+'/news.html', siteUrl+'/newsDetail.html?id='+business.id+'&type=business')" href="javascript:" class="a_mnew">查看</a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="btn_0100">
+										<a href="#" class="a_more">了解更多项目&nbsp;&nbsp;<img src="picture/main_img10.png" width="4" height="7"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--首页最新动态-->
+						<!--<div style="display: none;" class="w_0100" id="xwdt">
+							<div class="w_1200">
+								<div class="c_1200_4">
+									<div class="title_3">
+										<div class="tit_3">新闻资讯</div>
+										<div class="text_3">
+										</div>
+									</div>
+									<div style="width: 1231px;" class="t_1200_4">
+										<ul style="height: auto;">
+											<li style=" margin: 0 30px 14px 0;" v-for="news in latestNews" class="bg1">
+												<div class="t_mnew">
+													<div class="tit_mnew bod1">
+														<a href="javascript:" @click="jumpUrl(siteUrl+'/news.html', siteUrl+'/newsDetail.html?id='+news.id+'&type=news')" title="{{news.title}}">{{news.title}}</a>
+													</div>
+													<div class="text_mnew">{{news.brief}}</div>
+													<div class="time_mnew">{{news.gmtCreate}}</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>-->
+						
+						<div class="w_0100" id="xwdt">
+							<div class="w_1200">
+								<div class="c_1200_4">
+									<div class="title_3">
+										<div class="tit_3">新闻资讯</div>
+										<div class="text_3">
+											<!--<div class="l_tit">了解更多某某科技更多实时动态</div>
+											<div class="r_more">
+												<a href="#" class="a_more">了解更多动态&nbsp;&nbsp;<img src="picture/main_img10.png" width="4" height="7"></a>
+											</div>-->
+										</div>
+									</div>
+									<div style="width: 1231px;" class="t_1200_4">
+										<ul style="height: auto;">
+											<li style=" margin: 0 30px 14px 0;" v-for="list in marketAnalysis.list" class="bg1">
+												<div class="t_mnew">
+													<div class="tit_mnew bod1">
+														<a href="javascript:" @click="jumpUrl(siteUrl+'/advantage.html', siteUrl+'/newsDetail.html?id='+list.id+'&type=advantage')" title="{{list.title}}">{{list.title}}</a>
+													</div>
+													<div class="text_mnew">{{list.brief}}</div>
+													<div class="time_mnew">{{list.gmtCreate}}</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!--<div class="btn_0100">
+										<a href="#" class="a_more">了解更多项目&nbsp;&nbsp;<img src="picture/main_img10.png" width="4" height="7"></a>
+									</div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="pf_right">
+						<div class="t_41">
+							<a href="#" id="fhtop"><img src="picture/down_img8.png" width="41" height="47"></a>
+						</div>
+						<div class="t_41_2">
+							<div class="con_15_1">
+								<a href="#" id="ljth_h">
+									<div class="pf_left_text">了解大华</div>
+								</a>
+							</div>
+							<div class="con_15_1">
+								<a href="#" id="tzln_h">
+									<div class="pf_left_text">投资理念</div>
+								</a>
+							</div>
+							<div class="con_15_1">
+								<a href="#" id="thyw_h">
+									<div class="pf_left_text">大华业务</div>
+								</a>
+							</div>
+							<div class="con_15_1">
+								<a href="#" id="xwdt_h">
+									<div class="pf_left_text">最新动态</div>
+								</a>
+							</div>
+						</div>
+					</div>-->
+
+
+				</div>
+
+	</body>
+	
+	<script>
+		ui.loader('index', function() {
+			var vm = new Vue({
+				el: '#webApp',
+				data: $.extend(vue.data, {
+					marketAnalysis: {
+						imageUrl: '',
+						list: []
+					},
+					coreBusiness: [],
+					latestNews: [],
+					links: []
+				}),
+				methods: $.extend(vue.methods, {
+					jumpUrl: function(nav, url) {
+						var $nav = $('li[data-nav="' + nav + '"]', '#headerNav');
+						if(!url)
+							window.location.href = $('a', $nav).attr('href');
+						else
+							window.location.href = url + '&menuid=' + $nav.attr('id');
+					}
+				}),
+				ready: function() {
+					$('a', '#newsNotice').click(function() {
+						window.location.href = $('li[data-nav="/Site/web/news.html"]', '#headerMenu').find('a').attr('href');
+					});
+					this.$http.get(this.interfaceUrl + '/advantage/interface/list?page=1&limit=3').then(function(response) {
+						//							this.marketAnalysis.imageUrl = this.siteUrl+'/src/images/index/market-analysis.jpg';
+						this.marketAnalysis.list = response.body.page.list;
+					});
+					this.$http.get(this.interfaceUrl + '/business/interface/list?page=1&limit=6').then(function(response) {
+						this.coreBusiness = response.body.page.list;
+						this.$nextTick(function() {
+							$('.t_1200_3 li').hover(function() {
+								$(this).stop().animate({
+									margin: "0 31px 14px 0"
+								});
+
+							}, function() {
+								$(this).stop().animate({
+									margin: "14px 31px 0 0"
+								});
+							})
+						})
+					});
+					this.$http.get(this.interfaceUrl + '/news/interface/list?page=1&limit=1').then(function(response) {
+						this.latestNews = response.body.page.list;
+					});
+					this.$http.get(this.interfaceUrl + '/links/interface/list?page=1&limit=6').then(function(response) {
+						this.links = response.body.page.list;
+					});
+				}
+			});
+		});
+	</script>
+
+
+</html>

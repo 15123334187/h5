@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div id="footerNav" class="footer">
+	<div class="md">
+		<p class="menu">
+			<!--<a href="/Site/web/index.html">首页</a><span>|</span>
+			<a href="/Site/web/advantage.html">市场分析</a><span>|</span>
+			<a href="/Site/web/business.html">核心业务</a><span>|</span>
+			<a href="/Site/web/news.html">新闻动态</a><span>|</span>
+			<a href="/Site/web/download.html">软件下载</a><span>|</span>
+			<a href="/Site/web/about.html">关于我们</a>-->
+		</p>
+		<p><span>江西普舍投资管理有限公司版权所有</span><span>ICP备案号：赣ICP备16007740号-1</span></p>
+		<p><span>电话：0791-83901800</span><a>网站：www.sjt6666.com</a><span>地址：江西省南昌市高新区紫阳大道2999号</span></p>
+		<div class="QRCode-box">
+			<img src="/Site/web/src/images/common/2code.png"></span>
+		</div>
+	</div>
+</div>
+<script>
+	$('.menu', '#headerNav')
+		.clone()
+		.appendTo($('.menu', '#footerNav'))
+</script>

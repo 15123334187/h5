@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html id="webApp">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="src/style/error.css" type="text/css">
+	</head>
+
+	<body>
+		<div class="header-box">
+			<div class="header main-width">
+				<span class="header-info fn12">您好， 欢迎使用胜捷通国际期货平台</span>
+			</div>
+		</div>
+		<div class="main main-width">
+			<p class="main-title"><img src="src/images/common/logo.png"></p>
+			<div class="main-view">
+				<p class="view-title">操作失败</p>
+
+				<div class="choice-bank" style="margin-top:26px;">
+					<div style="float:left;"><img src="src/images/common/error.png" /></div>
+					<div style="margin-top:40px;padding-bottom:40px;">
+						<span v-text="msg"></span>
+						<!--<a style="margin-left: 10px; color: #1d2974;" href="javascript:">返回</a>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="background: #f9f9f9; margin: auto; width: 76%; height: 119px;font-size:12px;color:#818181;">
+			<div style="width: 100%; text-align: center; right: -10px; bottom: -45px; float: left; position: relative;">
+				<span class="middle">江西普舍投资管理有限公司版权所有&nbsp;&nbsp;ICP备案号：赣ICP备16007740号-1</span>
+			</div>
+		</div>
+		<script src="/Site/web/src/script/app.js"></script>
+		<script>
+			var vm = new Vue({
+				el: '#webApp',
+				data: $.extend(vue.data, {
+					msg: app.methods.getUrlArg('msg')
+				}),
+				methods: $.extend(vue.methods, {}),
+				ready: function() {}
+			})
+		</script>
+
+	</body>
+
+</html>

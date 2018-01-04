@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+
+<html id="webApp">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>个人中心-胜捷通国际期货平台</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="../src/style/base.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="src/css/global.css">
+		<link rel="stylesheet" type="text/css" href="src/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/page.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/ui.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/uc/common.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/uc/index.css" />
+		<script type="text/javascript" src="../src/script/app.js"></script>
+
+		<style type="text/css">
+			div.block_title {
+				position: relative;
+			}
+			
+			.select_box {
+				width: 140px;
+				height: 30px;
+				border: none;
+				border-radius: 5px;
+				/* position: absolute;
+            z-index: 999;
+            top: 8px;
+            left: 620px;*/
+			}
+			
+			.date_box {
+				width: 140px;
+				height: 30px;
+				border: none;
+				border-radius: 5px;
+				position: absolute;
+				z-index: 999;
+				top: 8px;
+				left: 770px;
+				border-radius: 5px;
+				line-height: 30px;
+			}
+			
+			.date_box input.date {
+				width: 125px;
+				height: 30px !important;
+				border: none;
+				outline: none;
+				border-radius: 5px;
+				line-height: 30px !important;
+				padding-left: 15px;
+				outline: none;
+			}
+			
+			.date_box label,
+			.select_box label {
+				z-index: 999;
+				top: 6px;
+				color: #aaa;
+			}
+			
+			.select_box input.select_input {
+				width: 95px;
+				height: 30px;
+				line-height: 30px;
+				border-bottom-left-radius: 5px;
+				border-top-left-radius: 5px;
+			}
+			
+			.select_box .select_flag {
+				height: 30px;
+				border: none;
+				width: 30px;
+				background: #fff url("../images/uc/tri_18.png") no-repeat scroll center center;
+				border-bottom-right-radius: 5px;
+				border-top-right-radius: 5px;
+				top: 0;
+			}
+			
+			.select_box div.select_bar {
+				top: 30px;
+				max-height: 350px;
+				overflow-y: scroll;
+				width: auto !important;
+			}
+			
+			.select_box div.select_bar span {
+				padding: 0 15px;
+			}
+			
+			.search_box {
+				position: absolute;
+				top: 8px;
+				left: 920px;
+				cursor: pointer;
+				height: 30px;
+				line-height: 30px;
+			}
+			/*弹出层*/
+			
+			div.mask_layer2 {
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background-color: #202227;
+				opacity: 0.9;
+				filter: alpha(opacity=90);
+				z-index: 10001;
+				font-family: 微软雅黑, Microsoft YaHei;
+			}
+			
+			.dialog_box2 {
+				position: fixed;
+				z-index: 10002;
+				left: 50%;
+				top: 50%;
+			}
+			
+			.dialog_box2 table {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.dialog_box2 table tr td.border1_1,
+			.dialog_box2 table tr td.border3_1,
+			.dialog_box2 table tr td.border1_3,
+			.dialog_box2 table tr td.border3_3 {
+				width: 5px;
+				height: 5px;
+				background-color: #fff;
+				opacity: 0.3;
+				filter: alpha(opacity=30);
+			}
+			
+			.dialog_box2 table tr td.border1_2,
+			.dialog_box2 table tr td.border3_2 {
+				height: 5px;
+				background-color: #fff;
+				opacity: 0.3;
+				filter: alpha(opacity=30);
+			}
+			
+			.dialog_box2 table tr td.border2_1,
+			.dialog_box2 table tr td.border2_3 {
+				width: 5px;
+				background-color: #fff;
+				opacity: 0.3;
+				filter: alpha(opacity=30);
+			}
+			
+			.dialog_box2 table tr td.content {
+				background-color: #fff;
+				vertical-align: top;
+				*+width: 600px;
+				*+height: 390px;
+				overflow: hidden;
+			}
+			
+			.dialog_box2 div.dialog_title_box {
+				height: 60px;
+				width: 100%;
+				background-color: #3977B4;
+				position: relative;
+			}
+			
+			.dialog_box2 div.dialog_title_box h4 {
+				font-size: 18px;
+				font-weight: bold;
+				line-height: 60px;
+				padding-left: 60px;
+				text-align: left;
+				color: #fff;
+			}
+			
+			.dialog_box2 div.dialog_title_box div.close {
+				width: 22px;
+				height: 23px;
+				position: absolute;
+				top: 19px;
+				right: 16px;
+				cursor: pointer;
+			}
+			
+			.content_box2 dl {
+				margin-left: 80px;
+				text-align: left;
+			}
+			
+			.content_box2 dl dt {
+				color: #464646;
+				font-size: 16px;
+			}
+			
+			.content_box2 dl dt,
+			.content_box2 dl dd {
+				margin-bottom: 20px;
+				text-align: left;
+			}
+			
+			.content_box2 input.txt {
+				width: 420px;
+				padding-left: 20px;
+				border: 1px solid #d0d6d9;
+				height: 43px;
+				line-height: 43px;
+			}
+		</style>
+		<!--/css-->
+	</head>
+
+	<body>
+
+		<div id="g_web" class="g_web ">
+
+			<!--main-->
+
+			<div id="ucenter-wrap">
+
+				<div class="layout_1000">
+					<div class="myasset_box">
+						<div class="block_title">
+							<span>我的资产 - </span><span class="color666">实时统计</span>
+						</div>
+						<div class="myasset_bar1">
+							<dl class="dl1">
+								<dt>信管家总权益</dt>
+								<dd><span class="big_money" id="span1" v-text="userinfo.balance | currency ''">0.00</span><span class="big_money pl5">$</span></dd>
+
+							</dl>
+							<dl class="dl2">
+								<dt>信管家可用资金</dt>
+								<dd><span class="big_money" id="span2" v-text="userinfo.available | currency ''">0.00</span> <span class="big_money pl5">$</span></dd>
+
+							</dl>
+						</div>
+						<div class="myasset_bar2">
+							<dl class="dl1">
+								<dt>网站账户余额</dt>
+								<dd><span class="big_money" id="spanBalanceAccount" v-text="userinfo.availableFunds | currency ''">0.00</span><span class="big_money pl5">￥</span></dd>
+
+							</dl>
+							<div class="fl">
+								<template v-if="userinfo.realState == 0">
+									<a href="{{siteUrl}}/ucenter/security/realNameEdit.html" class="red">充值</a>
+								</template>
+								<template v-else>
+									<a v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行充值操作！')" class="red">充值</a>
+									<a v-else="" href="{{siteUrl}}/ucenter/recharge/index.html" class="red">充值</a>
+								</template>
+
+								<template v-if="userinfo.realState == 0">
+									<a href="{{siteUrl}}/ucenter/security/realNameEdit.html" class="blue">提现</a>
+								</template>
+								<template v-else>
+									<a v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行提现操作！')" class="blue">提现</a>
+									<template v-else="">
+										<a v-if="userinfo.isBindBank == 0" href="{{siteUrl}}/ucenter/security/bindBankEdit.html" class="blue">提现</a>
+										<a v-else="" href="{{siteUrl}}/ucenter/withdraw/index.html" class="blue">提现</a>
+									</template>
+								</template>
+							</div>
+						</div>
+					</div>
+					<div class="financinglist_box">
+						<div class="block_title">
+							<div class="status_box">
+								<a class="current">账户列表</a>
+							</div>
+							<!--<div class="select_box" style="left: 650px; width: 100px;">
+								<div class="select_flag">
+								</div>
+								<input id="txtCurrency" type="text" class="select_input" placeholder="币种" style="width: 55px;" />
+								<div class="select_bar" style="display: none;">
+									<span data-val="-1">全部</span><span data-val="0">人民币</span><span data-val="1">美元</span><span data-val="2">港币</span>
+								</div>
+							</div>
+							<div class="select_box" style="left: 770px;">
+								<div class="select_flag">
+								</div>
+								<input id="txtFinAccount" type="text" class="select_input" placeholder="账号" />
+								<div class="select_bar">
+									<span>无</span><span>236907</span>
+								</div>
+							</div>
+							<div class="date_box" style="display: none;">
+								<input id="txtDate" type="text" class="date" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" placeholder="下一付息日" />
+							</div>
+							<div class="search_box">
+								<img id="imgSearch" src="src/images/uc/search_30.png" />
+							</div>-->
+						</div>
+						<form id="form1" action="">
+							<div class="financinglist_bar">
+								<table>
+									<thead>
+										<tr>
+											<td class="td1">
+												<span class="order_title" data-val="ProductTypeName asc">类型</span>
+											</td>
+											<td class="td2">
+												<span class="order_title" data-val="ProductName asc">交易线路</span>
+											</td>
+											<td class="td3">
+												<span class="order_title" data-val="SecuritiesFundAccount asc">交易账号</span>
+											</td>
+											<td class="td4">
+												<span class="order_title" data-val="FinancingOpenDate asc">初始密码</span>
+											</td>
+											<td class="td5">
+												<span class="order_title" data-val="AccountBalance asc">总权益</span>
+											</td>
+											<td class="td6">
+												<span class="order_title" data-val="ExitAmount asc">可用资金	</span>
+											</td>
+											<!--<td class="td7" style="width: 120px">
+												<span class="order_title" data-val="MonitorTotalAssets asc">总资产</span>
+											</td>-->
+											<td class="td6">操作
+											</td>
+										</tr>
+									</thead>
+									<tbody>
+
+										<!--<tr>
+											<td class="td1">
+												期货
+											</td>
+											<td>
+												<span class="green_27ae60"> 国际期货</span>
+											</td>
+											<template v-if="userinfo.isOpenAccount == 0">
+												<td>--</td>
+												<td>--</td>
+											</template>
+											<template v-else>
+												<td v-text="userinfo.account"></td>
+												<td v-text="userinfo.gmtCreate"></td>
+											</template>
+											<td>
+												<span v-text="userinfo.balance | currency ''"></span>$
+											</td>
+											<td>
+												<span v-text="userinfo.available | currency ''"></span>$
+											</td>
+											<td class="td9">
+												<template v-if="userinfo.realState == 0">
+													<a class="a_finmanage" href="{{siteUrl}}/ucenter/security/realNameEdit.html"><span class="bg_rongzi-1 mt2"></span><span class="pl10">入 金</span></a>
+												</template>
+												<template v-else>
+													<a class="a_finmanage"  v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行入金操作！')" ><span class="bg_rongzi-1 mt2"></span><span class="pl10">入 金</span></a>
+													<template v-else>
+														<a class="a_finmanage"  v-if="userinfo.isOpenAccount == 0" href="{{siteUrl}}/ucenter/open/index.html" ><span class="bg_rongzi-1 mt2"></span><span class="pl10">入 金</span></a>
+														<a v-else="" @click="layerAlert('入金', '#depositProduct')" class="a_finmanage" href="javascript:;"><span class="bg_rongzi-1 mt2"></span><span class="pl10">入 金</span></a>
+													</template>
+												</template>
+												
+												<template v-if="userinfo.realState == 0">
+													<a class="a_InterstPay" href="{{siteUrl}}/ucenter/security/realNameEdit.html"><span class="bg_fuxi-1 mt2"></span><span class="pl10">出 金</span></a>
+												</template>
+												<template v-else>
+													<a class="a_InterstPay"  v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行出金操作！')" ><span class="bg_fuxi-1 mt2"></span><span class="pl10">出 金</span></a>
+													<template v-else>
+														<a class="a_InterstPay"  v-if="userinfo.isOpenAccount == 0" href="{{siteUrl}}/ucenter/open/index.html" ><span class="bg_fuxi-1 mt2"></span><span class="pl10">出 金</span></a>
+														<a v-else="" @click="layerAlert('出金', '#withdrawProduct')" class="a_InterstPay" href="javascript:;"><span class="bg_fuxi-1 mt2"></span><span class="pl10">出 金</span></a>
+													</template>
+												</template>
+											</td>
+										</tr>-->
+
+										<tr style="height: 70px;" v-for="accountlist in userinfo.openAccountList">
+											<td class="td1">
+												期货
+											</td>
+											<td>
+												<span class="green_27ae60" v-text="accountlist.group"></span>
+											</td>
+											<td v-text="accountlist.account"></td>
+											<td v-text="accountlist.password"></td>
+											<td>
+												<span v-text="accountlist.balance | currency ''"></span>$
+											</td>
+											<td>
+												<span v-text="accountlist.available | currency ''"></span>$
+											</td>
+											<td class="td9">
+												<template v-if="userinfo.realState == 0">
+													<a class="a_finmanage" href="{{siteUrl}}/ucenter/security/realNameEdit.html"><span class="bg_rongzi-1 mt2"></span><span class="pl10">入 金</span></a>
+												</template>
+												<template v-else>
+													<a class="a_finmanage" v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行入金操作！')"><span class="bg_rongzi-1 mt2"></span><span class="pl10">入 金</span></a>
+													<template v-else>
+														<a class="a_finmanage" v-if="userinfo.isOpenAccount == 0" href="{{siteUrl}}/ucenter/open/index.html"><span class="bg_rongzi-1 mt2"></span><span class="pl10">入 金</span></a>
+														<a v-else="" @click="layerAlert('入金', '#depositProduct', accountlist.account, accountlist.type)" class="a_finmanage" href="javascript:;"><span class="bg_rongzi-1 mt2"></span><span class="pl10">入 金</span></a>
+													</template>
+												</template>
+
+												<template v-if="userinfo.realState == 0">
+													<a class="a_InterstPay" href="{{siteUrl}}/ucenter/security/realNameEdit.html"><span class="bg_fuxi-1 mt2"></span><span class="pl10">出 金</span></a>
+												</template>
+												<template v-else>
+													<a class="a_InterstPay" v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行出金操作！')"><span class="bg_fuxi-1 mt2"></span><span class="pl10">出 金</span></a>
+													<template v-else>
+														<a class="a_InterstPay" v-if="userinfo.isOpenAccount == 0" href="{{siteUrl}}/ucenter/open/index.html"><span class="bg_fuxi-1 mt2"></span><span class="pl10">出 金</span></a>
+														<a v-else="" @click="layerAlert('出金', '#withdrawProduct', accountlist.available, accountlist.type)" class="a_InterstPay" href="javascript:;"><span class="bg_fuxi-1 mt2"></span><span class="pl10">出 金</span></a>
+													</template>
+												</template>
+											</td>
+										</tr>
+										<template v-if="userinfo.isOpenAccount == 0">
+											<style>
+												#openAccount a {
+													font-size: 14px;
+												}
+											</style>
+											<tr id="openAccount" style="height: 45px;">
+												<td style="border-bottom: none;" colspan="7" align="center">
+													<a v-if="userinfo.realState == 0" href="{{siteUrl}}/ucenter/security/realNameEdit.html">立即开户</a>
+													<template v-else="">
+														<a v-if="userinfo.realState == 1" href="javascript:" onClick="layer.alert('通过实名认证后才能进行开户操作！')">立即开户</a>
+														<a v-else href="{{siteUrl}}/ucenter/open/index.html">
+															<template v-if="userinfo.openAccountList.length == 0">立即开户</template>
+															<template v-if="userinfo.openAccountList.length == 1">继续开户</template>
+														</a>
+													</template>
+												</td>
+											</tr>
+										</template>
+									</tbody>
+								</table>
+
+								<!--<div class="pagelist">
+									<div id="PageContent" class="scott"></div>
+								</div>-->
+							</div>
+							<div class="hiddenPanel" style="display: none;">
+								<input name="hfOrder" type="hidden" id="hfOrder" value="NextInterestPaymentDate asc" />
+							</div>
+						</form>
+
+						<div id="divHidden" style="display: none">
+							<input type="hidden" id="hfSessionName" value="" />
+						</div>
+					</div>
+				</div>
+
+				<!--/main-->
+				<!--footer-->
+
+				<link rel="stylesheet" type="text/css" href="src/css/uc/finmanage.css" />
+
+				<div style="display: none;" id="depositProduct" class="layout_1000">
+					<div class="finmanage_bar">
+						<dl>
+							<dt>入金账户 </dt>
+							<dd class="pr">
+								<div class="select_box disabled" disabled="disabled">
+									<div class="select_flag">
+									</div>
+									<input type="text" class="select_input disabled" v-model="account.name" disabled="disabled" />
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>账户余额 </dt>
+							<dd>
+								<span class="currency_unit" v-text="userinfo.availableFunds | currency ''"></span><span class="pl5 currency_unit">￥</span>
+							</dd>
+						</dl>
+						<dl>
+							<dt>入金金额 </dt>
+							<dd>
+								<input id="txtAmount" type="text" class="input" v-model="depositMoney" maxlength="11" /><span class="pl5 currency_unit">￥</span>
+							</dd>
+						</dl>
+						<dl>
+							<dt>到账金额 </dt>
+							<dd>
+								<span class="currency_unit" v-text="depositMoney / rate | currency ''">0.00</span><span class="pl5 currency_unit">$</span>
+							</dd>
+						</dl>
+						<div class="btn_group">
+							<input @click="depositAction" id="btnSub" type="button" class="btnSub" value="确认入金" />
+						</div>
+					</div>
+				</div>
+
+				<div style="display: none;" id="withdrawProduct" class="layout_1000">
+					<div class="finmanage_bar">
+						<dl>
+							<dt>出金账户 </dt>
+							<dd class="pr">
+								<div class="select_box disabled" disabled="disabled">
+									<div class="select_flag">
+									</div>
+									<input type="text" class="select_input disabled" v-model="username" disabled="disabled" />
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>可用金额 </dt>
+							<dd>
+								<span class="currency_unit" v-text="account.available | currency ''"></span><span class="pl5 currency_unit">$</span>
+							</dd>
+						</dl>
+						<dl>
+							<dt>出金金额 </dt>
+							<dd>
+								<input id="txtAmount" type="text" class="input" v-model="withdrawMoney" maxlength="11" /><span class="pl5 currency_unit">$</span>
+							</dd>
+						</dl>
+						<!--<dl>
+							<dt>登录密码 </dt>
+							<dd>
+								<input id="txtAmount" type="password" class="input" v-model="withdrawPwd"  autocomplete="off"  />
+							</dd>
+						</dl>-->
+						<dl>
+							<dt>到账金额 </dt>
+							<dd>
+								<span class="currency_unit" v-text="withdrawMoney * rate | currency ''">0.00</span><span class="pl5 currency_unit">￥</span>
+							</dd>
+						</dl>
+						<div class="btn_group">
+							<input @click="withdrawAction" id="btnSub" type="button" class="btnSub" value="确认出金" />
+						</div>
+					</div>
+				</div>
+
+				<script>
+					ui.loader('ucenter', 'index', function() {
+						var vm = new Vue({
+							el: '#webApp',
+							data: $.extend(vue.data, {
+								rate: 7.5,
+								depositMoney: '',
+								withdrawMoney: '',
+								account: {
+									name: null,
+									type: null,
+									available: null
+								}
+							}),
+							methods: $.extend(vue.methods, {
+								layerAlert: function(title, content, name, type) {
+									this.account.type = type;
+									if(title == '入金') {
+										this.account.name = name;
+									} else {
+										this.account.available = name;
+									}
+									layer.open({
+										type: 1,
+										title: title,
+										area: '1000px',
+										content: $(content),
+									});
+								},
+								depositAction: function() {
+									var money = $.trim(this.depositMoney);
+									if(money == '')
+										layer.alert('入金金额不能为空');
+									else if(!app.regExp.money.test(money))
+										layer.alert('入金金额输入有误');
+									else if(money < 100)
+										layer.alert('入金100元人民币起');
+									else {
+										var index = layer.load(2, {
+											shade: [0.4, '#000']
+										});
+										var _url = this.interfaceUrl + '/interface/deposit'
+										var _data = 'token=' + this.usertoken + '&userId=' + this.userid + '&money=' + money + '&flag=1&productId=' + this.account.type;
+										//										console.log(_url, _data);
+										var _this = this;
+										_this.ajaxSubmit({
+											url: _url,
+											data: _data,
+											success: function(data) {
+												if(data.code == 0) {
+													layer.open({
+														title: '提示',
+														content: '入金成功',
+														end: function() {
+															window.location.reload();
+														}
+													});
+												} else
+													layer.alert(data.msg);
+											},
+											error: function() {},
+											complete: function() {
+												layer.close(index);
+											}
+										});
+									}
+								},
+								withdrawAction: function() {
+									var available = this.account.available;
+									var money = $.trim(this.withdrawMoney);
+									//									var pwd = this.withdrawPwd;
+									if(available <= 0)
+										layer.alert('可用金额为0，无法出金');
+									else if(money == '')
+										layer.alert('请输入出金金额');
+									else if(!app.regExp.money.test(money))
+										layer.alert('出金金额输入有误');
+									else if(money < 10)
+										layer.alert('出金金额最少10美元起');
+									//									else if (pwd == '')
+									//										layer.alert('请输入登录密码');
+									else {
+										var index = layer.load(2, {
+											shade: [0.4, '#000']
+										});
+										var _url = this.interfaceUrl + '/interface/deposit?'
+										var _data = 'token=' + this.usertoken + '&userId=' + this.userid + '&money=' + money + '&flag=2&&productId=' + this.account.type;
+										this.ajaxSubmit({
+											url: _url,
+											data: _data,
+											success: function(data) {
+												if(data.code == 0) {
+													layer.open({
+														title: '提示',
+														content: '出金成功',
+														end: function() {
+															window.location.reload();
+														}
+													});
+												} else
+													layer.alert(data.msg);
+											},
+											error: function() {},
+											complete: function() {
+												layer.close(index);
+											}
+										});
+									}
+								}
+							}),
+							ready: function() {
+								//								this
+								//									.$http
+								//									.get(this.interfaceUrl + '/interface/userinfo?userId=' + this.userid)
+								//									.then(function(response) {
+								//										this.userinfo = response.body;
+								//									});
+							}
+						});
+					});
+				</script>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

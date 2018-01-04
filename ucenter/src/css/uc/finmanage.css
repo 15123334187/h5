@@ -1,0 +1,358 @@
+﻿.finmanage_box
+{
+    margin-top: 20px;
+    border: 1px solid #c2d9e8;
+    background-color: #fff;
+    min-height: 450px;
+}
+
+.finmanage_bar
+{
+    padding-top: 30px; /*overflow:hidden;*/
+}
+
+.finmanage_bar * { font-size:14px}
+
+.finmanage_bar dl
+{
+    margin-top: 30px;
+    height: 38px;
+    line-height: 38px;
+    width: 100%;
+}
+
+.finmanage_bar dl dt
+{
+    float: left;
+    text-align: right;
+    width: 235px;
+    color: #666;
+}
+
+.finmanage_bar dl dd
+{
+    float: left;
+    width: 730px;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.finmanage_bar dl input.input
+{
+    height: 33px;
+    line-height: 33px;
+    padding-left: 4px;
+}
+
+.finmanage_bar dl input.date
+{
+    width: 123px;
+}
+
+#actiontype a
+{
+    display: block;
+    float: left;
+    margin-right: 10px;
+    height: 34px;
+    line-height: 34px;
+    width: 122px;
+    text-align: center;
+    color: #333;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+}
+
+#actiontype a.actived
+{
+    background-color: #3672ac;
+    color: #fff;
+}
+
+.select_box
+{
+    width: 600px;
+}
+
+.select_box input.select_input
+{
+    width: 550px;
+}
+
+.select_box div.select_bar
+{
+    width: 600px;
+}
+
+
+
+.btn_group
+{
+    width: 100%;
+    margin-top: 56px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.btnSub
+{
+    font-size: 18px;
+    width: 210px;
+    background-color: #bf191d;
+    border: none;
+    color: #fff;
+    height: 38px;
+    line-height: 38px;
+}
+.disabled
+{
+    background-color: #f0f0f0 !important;
+    color: #7a7a7a !important;
+}
+
+#txtAmount,#txtWithdrawAmount
+{
+    width: 123px !important;
+}
+/*追加融资*/
+
+.finappend_box
+{
+    margin-top: 20px;
+    border: 1px solid #c2d9e8;
+    background-color: #fff;
+    min-height: 450px;
+}
+
+.finappend_bar
+{
+    padding-top: 30px; /*overflow:hidden;*/
+}
+
+.finappend_bar dl
+{
+    margin-top: 30px;
+    height: 38px;
+    line-height: 38px;
+    width: 100%;
+}
+
+.finappend_bar dl dt
+{
+    float: left;
+    text-align: right;
+    width: 235px;
+    color: #666;
+}
+
+.finappend_bar dl dd
+{
+    float: left;
+    width: 730px;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.finappend_bar dl input.input
+{
+    height: 33px;
+    line-height: 33px;
+    padding-left: 15px;
+}
+
+.finappend_bar dl input.date
+{
+    width: 123px;
+}
+/*申请融资*/
+
+.finapply_box
+{
+    margin-top: 20px;
+    border: 1px solid #c2d9e8;
+    background-color: #fff;
+    min-height: 450px;
+}
+
+.finapply_bar
+{
+    padding-top: 30px; /*overflow:hidden;*/
+}
+
+.finapply_bar dl
+{
+    margin-top: 20px;
+    height: 38px;
+    line-height: 38px;
+    width: 100%;
+}
+
+.finapply_bar dl dt
+{
+    float: left;
+    text-align: right;
+    width: 235px;
+    color: #666;
+}
+
+.finapply_bar dl dd
+{
+    float: left;
+    width: 730px;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.finapply_bar dl input.input
+{
+    height: 33px;
+    line-height: 33px;
+    padding-left: 15px;
+}
+
+.finapply_bar dl input.date
+{
+    width: 123px;
+}
+
+#ulBankList
+{
+    width: 675px;
+}
+#ulBankList li
+{
+    width: 190px;
+    border: 1px solid #d0d6d9;
+    float:left;
+    height:66px;
+    padding:12px 0;
+    text-align:center;
+    line-height:22px!important;
+    margin-right:12px;
+    cursor:pointer;
+}
+#ulBankList li.actived
+{
+    border:1px solid #bf191d;
+}
+
+#ulBankList span.spanBankName
+{
+    color:#333;
+    font-size:14px;
+}
+#ulBankList span.spanBankAccount
+{
+    color:#bf191d;
+    font-size:18px;
+}
+
+/*弹出层*/
+div.mask_layer2 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #202227;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    z-index: 10001;
+    font-family:微软雅黑, Microsoft YaHei;
+}
+
+.dialog_box2 {
+    position: fixed;
+    z-index: 10002;
+    left: 50%;
+    top: 50%;
+}
+
+    .dialog_box2 table {
+        width: 100%;
+        height: 100%;
+    }
+
+        .dialog_box2 table tr td.border1_1,
+        .dialog_box2 table tr td.border3_1,
+        .dialog_box2 table tr td.border1_3,
+        .dialog_box2 table tr td.border3_3 {
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+
+        .dialog_box2 table tr td.border1_2,
+        .dialog_box2 table tr td.border3_2 {
+            height: 5px;
+            background-color: #fff;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+
+        .dialog_box2 table tr td.border2_1,
+        .dialog_box2 table tr td.border2_3 {
+            width: 5px;
+            background-color: #fff;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+
+        .dialog_box2 table tr td.content {
+            background-color: #fff;
+            vertical-align: top;
+            *+width:600px;
+            *+height:390px;
+            overflow:hidden;
+        }
+
+    .dialog_box2 div.dialog_title_box {
+        height: 60px;
+        width: 100%;
+        background-color: #bf191d;
+        position: relative;
+    }
+
+        .dialog_box2 div.dialog_title_box h4 {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 60px;
+            padding-left: 60px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .dialog_box2 div.dialog_title_box div.close {
+            width: 22px;
+            height: 23px;
+            position: absolute;
+            top: 19px;
+            right: 16px;
+            cursor: pointer;
+        }
+
+.content_box2 dl {
+    margin-left: 80px;
+    text-align: left;
+}
+
+    .content_box2 dl dt {
+        color: #464646;
+        font-size: 16px;
+    }
+
+    .content_box2 dl dt,
+    .content_box2 dl dd {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+.content_box2 input.txt {
+    width: 420px;
+    padding-left: 20px;
+    border: 1px solid #d0d6d9;
+    height: 43px;
+    line-height: 43px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head id="webHeader">
+		<title>软件下载-胜捷通</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link type="text/css" href="/Site/web/src/style/download.css" rel="stylesheet" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+
+	<body class="g_body g_locale2052">
+		<div id="g_main" class='g_main g_col2 '>
+			<div id="g_web" class="g_web ">
+
+				<div class="swiper-container" style="height: 640px;">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" v-for="banner in banner.data" :data-image="banner.filePath"></div>
+					</div>
+					<div class="swiper-pagination swiper-pagination-white" v-show="banner.pagination"></div>
+					<div class="swiper-button-next swiper-button-white" v-show="banner.next"></div>
+					<div class="swiper-button-prev swiper-button-white" v-show="banner.prev"></div>
+				</div>
+
+				<div class="download-center">
+					<h1>软件下载</h1>
+					<ul>
+						<li>
+							<a href="http://www.xinguanjia.hk/software/A_E/2016/1207/61.html" target="_blank">信管家-交易软件（实盘）</a>
+							<a href="http://www.xinguanjia.hk/software/A_E/2016/1207/61.html" target="_blank">信管家-监控端</a>
+						</li>
+						<li>
+							<a class="ios-ico" href="https://itunes.apple.com/cn/app/xin-guan-jia/id1105305866" target="_blank">ios下载</a>
+							<a class="android-ico" href="http://xinguanjia.hk/uploads/soft/xinguanjia_az.apk" target="_blank">android下载</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<script>
+			ui.loader('download', function() {
+				var newList = [];
+				var vm = new Vue({
+					el: '#webApp',
+					data: vue.data,
+					methods: vue.methods,
+					ready: function() {
+						this.loadBanner(this.interfaceUrl + '/banner/interface/list/4');
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

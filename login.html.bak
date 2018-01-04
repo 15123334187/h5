@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html id="webApp" class="g_html">
+
+	<head id="webHeader">
+		<title>登录-胜捷通</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="keywords" content="{{keywords}}" />
+		<meta name="description" content="{{description}}" />
+		<link rel="shortcut icon" href="{{favicon}}" type="image/x-icon">
+		<link type="text/css" href="/Site/web/src/style/base.css" rel="stylesheet" />
+		<link type="text/css" href="/Site/web/src/style/login.css" rel="stylesheet" />
+		<script src="/Site/web/src/script/app.js"></script>
+	</head>
+    
+    <body class="g_body g_locale2052" style="background:#f0f6fe;">
+		<div id="g_main" class='g_main g_col2 '>
+			<div id="g_web" class="g_web ">
+
+				<div class="login-container clearfix">
+                    <div class="left">
+                        <h1>胜捷通外盘期货网</h1>
+                        <h2>顺势而为 价值回归</h2>
+                    </div>
+                    <div class="login-box">
+                        <ul class="login-list clearfix">
+                            <li><h1>用户登录</h1></li>
+                            <li><span></span><input class="input" type="text" placeholder="请输入手机号码" @keydown.enter="login" v-model="uname" maxlength="11" /></li>
+                            <li><input class="input" type="password" placeholder="请输入密码" @keydown.enter="login" v-model="pwd" maxlength="32" /></li>
+                            <li class="code"><input class="input" type="text" placeholder="请输入验证码" @keydown.enter="login" v-model="captcha.value" maxlength="5" /><a href="javascript:" @click="getCaptcha"><img :src="captcha.url"></a></li>
+                            <li><label><input type="checkbox" v-model="autoLogin">下次自动登录</label>
+                                <a href="javascript:" class="right">忘记密码</a>
+                            </li>
+                            <li class="error" v-show="error.show" v-text="error.msg"></li>
+                            <li>
+                                <a href="javascript:" class="buttons login" @click="login" v-text="loginTxt"></a>
+                            </li>
+                        </ul>
+                        <div class="login-mask"></div>
+                    </div>
+                </div>
+
+			</div>
+		</div>
+		
+	</body>
+
+	<script>
+		ui.loader('login', function() {
+			var vm = new Vue({
+				el: '#webApp',
+				data: $.extend(vue.data, {
+					error: { show: false, msg: '' },
+					uname: '',
+					pwd: '',
+					autoLogin: false,
+					loginTxt: '登录'
+				}),
+				methods: $.extend(vue.methods, {
+					_error: function(msg) {
+						this.error = { show: true, msg: msg};
+					},
+					login: function() {
+						var uname = $.trim(this.uname);
+						var pwd = this.pwd;
+						var captcha = $.trim(this.captcha.value);
+						var autoLogin = this.autoLogin;
+						if (uname == '')
+							this._error('请输入手机号码');
+						else if (!app.regExp.phone.test(uname))
+							this._error('请输入正确的手机号码');
+						else if (pwd == '')
+							this._error('请输入密码');
+						else if (captcha == '')
+							this._error('请输入验证码');
+						else if (this.loginTxt != '登录中...') {
+							this.ajaxSubmit({
+								before: function() { vm.loginTxt = '登录中...';},
+								url: vm.interfaceUrl+'/interface/login',
+								data: "username="+uname+"&password="+pwd+"&captcha="+captcha+"&isRememberMe="+autoLogin,
+								success: function(data) {
+									if (data.code == 0) {
+										vm.setUserNameCookie(uname);
+										vm.setUserTokenCookie(data.userId, data.token);
+										window.location.href = vm.siteUrl+'/ucenter/index.html';
+									} else 
+										vm._error(data.msg);										
+								},
+								error: function() {},
+								complete: function() {vm.loginTxt = '登录';}
+							});
+						}
+					}
+				}),
+				ready: function() {
+					this.getCaptcha();
+					$('.input').on('input propertychange', function() {
+						vm.error = { show: false, msg: '' }
+					});
+				}
+			});
+		});
+	</script>
+
+</html>
