@@ -87,16 +87,16 @@
 									</div>
 									<div class="l_17"></div>
 								</div>
-								<div class="li_6">
+								<div id="lawStatement" class="li_6">
 									<div class="l_41">
-										<a href="about.html" class="bg41_2"></a>
+										<a href="javascript:" class="bg41_2"></a>
 									</div>
 									<div class="l_140">
 										<div class="t_140_1">
-											<a href="about.html">法律声明</a>
+											<a href="javascript:">法律声明</a>
 										</div>
 										<div class="t_140_2">
-											<a href="about.html">Law Statement</a>
+											<a href="javascript:">Law Statement</a>
 										</div>
 									</div>
 									<div class="l_17"></div>
@@ -351,6 +351,9 @@
 					}
 				}),
 				ready: function() {
+                    $('a', '#lawStatement').click(function() {
+                        window.location.href = $('li[data-nav="/Site/web/about.html"]', '#headerMenu').find('a').attr('href') +'&model=1';
+                    });
 					$('a', '#newsNotice').click(function() {
 						window.location.href = $('li[data-nav="/Site/web/advantage.html"]', '#headerMenu').find('a').attr('href');
 					});

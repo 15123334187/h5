@@ -53,11 +53,6 @@
 					var btn = 1200 - $(".c_0100_1 .pz_SideLayer").width();
 					var btnl = btn / 2;
 					$(".c_0100_1 .pz_SideLayer").css("margin-left", btnl + "px");
-
-					$('#pcleft a').click(function() {
-						$(this).addClass('hover').parent('div').siblings('div').find('a').removeClass('hover');
-						$('.pz_main').eq($(this).parent('div').index()).show().siblings('.pz_main').hide();
-					});
 				</script>
 			</div>
 
@@ -210,9 +205,23 @@
 					var newList = [];
 					var vm = new Vue({
 						el: '#webApp',
-						data: vue.data,
-						methods: vue.methods,
-						ready: function() {}
+						data: $.extend(vue.data, {
+						    model: app.methods.getUrlArg('model')
+						}),
+						methods: $.extend(vue.methods, {
+						    showModel: function($tab, $content) {
+                                $tab.addClass('hover').parent('div').siblings('div').find('a').removeClass('hover');
+                                $content.show().siblings('.pz_main').hide();
+							}
+						}),
+						ready: function() {
+						    if (this.model && this.model.length) {
+						        this.showModel($('#pcleft a').eq(this.model), $('.pz_main').eq(this.model));
+							}
+                            $('#pcleft a').click(function() {
+                                vm.showModel($(this), $('.pz_main').eq($(this).parent('div').index()));
+                            });
+						}
 					});
 				});
 			</script>
