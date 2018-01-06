@@ -49,7 +49,7 @@
 									<dt>真实姓名：</dt>
 									<dd>
 										<!--										<input name="FastPaymentAmount1$txtAmount" type="text" id="FastPaymentAmount1_txtAmount" class="input index_te" onBlur="fmoneyOnblur('FastPaymentAmount1_txtAmount',2);" onFocus="fmoneyOnfocus('FastPaymentAmount1_txtAmount',2)" onKeyPress="if (event.keyCode!=46 &amp;&amp; (event.keyCode<48 || event.keyCode>57)) event.returnValue=false">-->
-										<input type="text" class="input index_te"  v-model="trueName" maxlength="4" />
+										<input type="text" class="input index_te"  v-model="trueName" maxlength="20" />
 									</dd>
 								</dl>
 								<br />
@@ -99,8 +99,8 @@
 							var idCard = $.trim(this.idCard);
 							if (trueName == '')
 								layer.alert('真实姓名不能为空');
-							else if (!app.regExp.trueName.test(trueName))
-								layer.alert('真实姓名只允许输入2-4个汉字');
+							//else if (!app.regExp.trueName.test(trueName))
+							//	layer.alert('真实姓名只允许输入2-4个汉字');
 							else if (idCard == '')
 								layer.alert('身份证号不能为空');
 							//else if (!app.regExp.idCard.test(idCard))

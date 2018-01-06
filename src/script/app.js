@@ -195,7 +195,8 @@ vue = {
 							nextButton: '.swiper-button-next',
 							prevButton: '.swiper-button-prev',
 							spaceBetween: 30,
-							effect: 'fade'
+							effect: 'fade',
+							autoplay: 5000
 						});
 					}
 				});

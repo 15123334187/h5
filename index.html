@@ -65,8 +65,9 @@
 							<div class="title_1">
 								<div class="tit_1">源泰公告</div>
 								<div v-for="news in latestNews" class="text_1">
-									<p><a href="javascript:" @click="jumpUrl(siteUrl+'/news.html', siteUrl+'/newsDetail.html?id='+news.id+'&type=news')" title="{{news.title}}">
-										<span style="color: rgb(51, 51, 51); font-family: &#39;Microsoft YaHei&#39;, Helvetica, Arial, sans-serif; font-size: 13.63636302947998px; line-height: 23.99147605895996px; text-indent: 28px; background-color: rgb(246, 246, 246);">{{news.title}}</span>
+									<p>
+										<a href="javascript:" @click="jumpUrl(siteUrl+'/news.html', siteUrl+'/newsDetail.html?id='+news.id+'&type=news')" title="{{news.title}}">
+											<span style="color: rgb(51, 51, 51); font-family: &#39;Microsoft YaHei&#39;, Helvetica, Arial, sans-serif; font-size: 13.63636302947998px; line-height: 23.99147605895996px; text-indent: 28px; background-color: rgb(246, 246, 246);">{{news.title}}</span>
 										</a>
 									</p>
 								</div>
@@ -78,10 +79,10 @@
 									</div>
 									<div class="l_140">
 										<div class="t_140_1">
-											<a href="product.html" >产品规则</a>
+											<a href="product.html">产品规则</a>
 										</div>
 										<div class="t_140_2">
-											<a href="product.html" >Product Rules</a>
+											<a href="product.html">Product Rules</a>
 										</div>
 									</div>
 									<div class="l_17"></div>
@@ -92,10 +93,10 @@
 									</div>
 									<div class="l_140">
 										<div class="t_140_1">
-											<a href="about.html">企业文化</a>
+											<a href="about.html">法律声明</a>
 										</div>
 										<div class="t_140_2">
-											<a href="about.html">Vision＆Prospects</a>
+											<a href="about.html">Law Statement</a>
 										</div>
 									</div>
 									<div class="l_17"></div>
@@ -106,10 +107,10 @@
 									</div>
 									<div class="l_140">
 										<div class="t_140_1">
-											<a href="javascript:" >新闻资讯</a>
+											<a href="javascript:">新闻资讯</a>
 										</div>
 										<div class="t_140_2">
-											<a href="javascript:" >Latest News</a>
+											<a href="javascript:">Latest News</a>
 										</div>
 									</div>
 									<div class="l_17"></div>
@@ -150,7 +151,7 @@
 				<div class="w_0100" style=" overflow:hidden;" id="tzln">
 					<div class="w_1200">
 						<!--网页投资理财开始-->
-						<div  class="c_1200_3">
+						<div class="c_1200_3">
 							<div class="l_1237_ln"><img src="picture/main_img7.png" height="658" width="1237" /></div>
 							<div class="r_1222_ln"><img src="picture/main_img7_b.png" height="658" width="1222" /></div>
 							<div class="t_1200">平台简介</div>
@@ -159,8 +160,7 @@
 									<div class="t_410_1"><br/>
 									</div>
 									<div class="t_410_3">
-										江西华劭投资管理有限公司总部坐落于英雄城南昌，成立于2015年3月，注册资本金1000万元整，是一家提供投资管理、投资咨询的综合性服务机构。公司秉承南昌诚信图强的城市精神，致力于为客户提供最优质的服务。<br />
-										公司坚持规范自律、诚实信用的经营理念，以持续经营、踏实稳健为宗旨，积极打造专业化期货理财服务。以专业的水平，服务专业的市场，在行业内赢得了良好的口碑。
+										江西华劭投资管理有限公司总部坐落于英雄城南昌，成立于2015年3月，注册资本金1000万元整，是一家提供投资管理、投资咨询的综合性服务机构。公司秉承南昌诚信图强的城市精神，致力于为客户提供最优质的服务。<br /> 公司坚持规范自律、诚实信用的经营理念，以持续经营、踏实稳健为宗旨，积极打造专业化期货理财服务。以专业的水平，服务专业的市场，在行业内赢得了良好的口碑。
 									</div>
 								</div>
 								<div class="r_410">
@@ -260,7 +260,7 @@
 								</div>
 							</div>
 						</div>-->
-						
+
 						<div class="w_0100" id="xwdt">
 							<div class="w_1200">
 								<div class="c_1200_4">
@@ -275,15 +275,17 @@
 									</div>
 									<div style="width: 1231px;" class="t_1200_4">
 										<ul style="height: auto;">
-											<li style=" margin: 0 30px 14px 0;" v-for="list in marketAnalysis.list" class="bg1">
-												<div class="t_mnew">
-													<div class="tit_mnew bod1">
-														<a href="javascript:" @click="jumpUrl(siteUrl+'/advantage.html', siteUrl+'/newsDetail.html?id='+list.id+'&type=advantage')" title="{{list.title}}">{{list.title}}</a>
+											<template v-for="list in marketAnalysis.list">
+												<li style=" margin: 0 30px 14px 0; cursor: pointer;" @click="jumpUrl(siteUrl+'/advantage.html', siteUrl+'/newsDetail.html?id='+list.id+'&type=advantage')" title="{{list.title}}" class="bg1">
+													<div class="t_mnew">
+														<div class="tit_mnew bod1">
+															<a>{{list.title}}</a>
+														</div>
+														<div class="text_mnew">{{list.brief}}</div>
+														<div class="time_mnew">{{list.gmtCreate}}</div>
 													</div>
-													<div class="text_mnew">{{list.brief}}</div>
-													<div class="time_mnew">{{list.gmtCreate}}</div>
-												</div>
-											</li>
+												</li>
+											</template>
 										</ul>
 									</div>
 									<!--<div class="btn_0100">
@@ -292,6 +294,7 @@
 								</div>
 							</div>
 						</div>
+
 					</div>
 					<!--<div class="pf_right">
 						<div class="t_41">
@@ -321,11 +324,10 @@
 						</div>
 					</div>-->
 
-
 				</div>
 
 	</body>
-	
+
 	<script>
 		ui.loader('index', function() {
 			var vm = new Vue({
@@ -358,29 +360,28 @@
 					});
 					this.$http.get(this.interfaceUrl + '/business/interface/list?page=1&limit=6').then(function(response) {
 						this.coreBusiness = response.body.page.list;
-						this.$nextTick(function() {
-							$('.t_1200_3 li').hover(function() {
-								$(this).stop().animate({
-									margin: "0 31px 14px 0"
-								});
-
-							}, function() {
-								$(this).stop().animate({
-									margin: "14px 31px 0 0"
-								});
-							})
-						})
+						//						this.$nextTick(function() {
+						//							$('.t_1200_3 li').hover(function() {
+						//								$(this).stop().animate({
+						//									margin: "0 31px 14px 0"
+						//								});
+						//
+						//							}, function() {
+						//								$(this).stop().animate({
+						//									margin: "14px 31px 0 0"
+						//								});
+						//							})
+						//						})
 					});
 					this.$http.get(this.interfaceUrl + '/news/interface/list?page=1&limit=1').then(function(response) {
 						this.latestNews = response.body.page.list;
 					});
-					this.$http.get(this.interfaceUrl + '/links/interface/list?page=1&limit=6').then(function(response) {
-						this.links = response.body.page.list;
-					});
+					//					this.$http.get(this.interfaceUrl + '/links/interface/list?page=1&limit=6').then(function(response) {
+					//						this.links = response.body.page.list;
+					//					});
 				}
 			});
 		});
 	</script>
-
 
 </html>

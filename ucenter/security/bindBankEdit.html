@@ -93,7 +93,7 @@
 								<dl>
 									<dt>开户人姓名：</dt>
 									<dd>
-										<input class="input index_te" type="text" v-model="openName" maxlength="4" />
+										<input class="input index_te" type="text" v-model="openName" maxlength="20" />
 									</dd>
 								</dl>
 								<br />
@@ -207,8 +207,8 @@
 										layer.alert('请输入支行名称');
 									else if(openName == '')
 										layer.alert('请输入开户人姓名');
-									else if(!app.regExp.trueName.test(openName))
-										layer.alert('开户人姓名必须是真实姓名，2-4个汉字')
+									//else if(!app.regExp.trueName.test(openName))
+									//	layer.alert('开户人姓名必须是真实姓名，2-4个汉字')
 									else if(idCard == '')
 										layer.alert('请输入身份证号码');
 									//else if (!app.regExp.idCard.test(idCard))
