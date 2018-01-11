@@ -149,9 +149,25 @@
 				</div>
 				<!--首页投资理念-->
 				<div class="w_0100" style=" overflow:hidden;" id="tzln">
+
+					<link href="video/video-js.css" rel="stylesheet">
+					<video id="my-video" class="video-js vjs-big-play-centered" controls>
+						<source src="video/video.mp4" type="video/mp4">
+					</video>
+					<script src="video/video.min.js"></script>
+					<script type="text/javascript">
+                        $(function () {
+                            var myPlayer = videojs('my-video');
+                            videojs("my-video").ready(function(){
+                                var myPlayer = this;
+                                myPlayer.play();
+                            });
+                        })
+					</script>
+
 					<div class="w_1200">
 						<!--网页投资理财开始-->
-						<div class="c_1200_3">
+						<div  style="display: none" class="c_1200_3">
 							<div class="l_1237_ln"><img src="picture/main_img7.png" height="658" width="1237" /></div>
 							<div class="r_1222_ln"><img src="picture/main_img7_b.png" height="658" width="1222" /></div>
 							<div class="t_1200">平台简介</div>
