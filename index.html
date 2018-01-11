@@ -151,7 +151,7 @@
 				<div class="w_0100" style=" overflow:hidden;" id="tzln">
 
 					<link href="js/video/video-js.css" rel="stylesheet">
-					<video id="my-video" class="video-js vjs-big-play-centered" controls>
+					<video id="my-video" class="video-js vjs-big-play-centered" controls loop>
 						<source src="http://www.ytjinkong.com/Site/web/video.mp4" type="video/mp4">
 					</video>
 					<script src="js/video/video.min.js"></script>
@@ -160,6 +160,7 @@
                             var myPlayer = videojs('my-video');
                             videojs("my-video").ready(function(){
                                 var myPlayer = this;
+                                myPlayer.width(document.documentElement.clientWidth);
                                 myPlayer.play();
                             });
                         })
