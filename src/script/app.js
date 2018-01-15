@@ -147,9 +147,7 @@ vue = {
 	},
 	methods: {
 		initMenus: function() {
-			
 			this.$http.get(this.interfaceUrl+'/interface/menu').then(function(response) {
-				
 				this.menuList = response.body.page.list;
 				this.$nextTick(function() {
 					var _this = this;
